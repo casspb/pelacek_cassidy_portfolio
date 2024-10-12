@@ -1,0 +1,66 @@
+@use 'fonts';
+
+$primary-color: #046e8f;
+$secondary-color: #badd7f;
+$accent-color: #38aecc;
+$body-text-color: #1a090d;
+$base-colour:fffaff;
+$primary-font-family: "DM Mono", monospace;
+$secondary-font-family: "Inter", sans-serif;
+
+//fonts with breakpoints
+
+$breakpoint-mobile: 412px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1512px;
+
+//font size mobile
+$font-size-h1: 48px;
+$font-size-h2: 32px;
+$font-size-h3: 16px;
+$font-size-p: 14px;
+
+
+h1 {
+    font-size: $font-size-h1;
+    font-family: $primary-font-family;
+  
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 72px; 
+    }
+  
+    @media (max-width: $breakpoint-desktop) {
+      font-size: 128px; 
+     }
+  }
+
+  h3{
+    font-size: $font-size-h3;
+    font-family: $secondary-font-family;
+  }
+  
+  h2 {
+    font-size: $font-size-h2;
+    font-family: $primary-font-family;
+  
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 64px;
+    }
+  
+    @media (max-width: $breakpoint-desktop) {
+      font-size: 78px;
+    }
+  }
+  
+  p {
+    font-size: $font-size-p;
+    font-family: $primary-font-family;
+  
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 20px;
+    }
+  
+    @media (max-width: $breakpoint-desktop) {
+      font-size: 24px;
+    }
+  }
