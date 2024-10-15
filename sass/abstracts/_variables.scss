@@ -4,63 +4,77 @@ $primary-color: #046e8f;
 $secondary-color: #badd7f;
 $accent-color: #38aecc;
 $body-text-color: #1a090d;
-$base-colour:fffaff;
+$base-colour: #fffaff; // Added a hash for color code
 $primary-font-family: "DM Mono", monospace;
 $secondary-font-family: "Inter", sans-serif;
 
-//fonts with breakpoints
-
+// Fonts with breakpoints
 $breakpoint-mobile: 412px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1512px;
 
-//font size mobile
+// Font size defaults
 $font-size-h1: 48px;
 $font-size-h2: 32px;
 $font-size-h3: 16px;
 $font-size-p: 14px;
 
-
 h1 {
-    font-size: $font-size-h1;
+    font-size: $font-size-h1; // Base size for mobile
     font-family: $primary-font-family;
-  
-    @media (max-width: $breakpoint-tablet) {
-      font-size: 72px; 
-    }
-  
-    @media (max-width: $breakpoint-desktop) {
-      font-size: 128px; 
-     }
-  }
 
-  h3{
-    font-size: $font-size-h3;
+    @media (max-width: $breakpoint-desktop) {
+        font-size: 128px; 
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        font-size: 72px; 
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 48px; // Mobile size
+    }
+}
+
+h2 {
+    font-size: $font-size-h2; // Base size for mobile
+    font-family: $primary-font-family;
+
+    @media (max-width: $breakpoint-desktop) {
+        font-size: 78px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        font-size: 64px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 32px; // Mobile size
+    }
+}
+
+h3 {
+    font-size: $font-size-h3; // Base size for mobile
     font-family: $secondary-font-family;
-  }
-  
-  h2 {
-    font-size: $font-size-h2;
+
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 16px; // Mobile size
+    }
+}
+
+p {
+    font-size: $font-size-p; // Base size for mobile
     font-family: $primary-font-family;
-  
-    @media (max-width: $breakpoint-tablet) {
-      font-size: 64px;
-    }
-  
+
     @media (max-width: $breakpoint-desktop) {
-      font-size: 78px;
+        font-size: 24px;
     }
-  }
-  
-  p {
-    font-size: $font-size-p;
-    font-family: $primary-font-family;
-  
+
     @media (max-width: $breakpoint-tablet) {
-      font-size: 20px;
+        font-size: 20px;
     }
-  
-    @media (max-width: $breakpoint-desktop) {
-      font-size: 24px;
+
+    @media (max-width: $breakpoint-mobile) {
+        font-size: 14px; // Mobile size
     }
-  }
+}
