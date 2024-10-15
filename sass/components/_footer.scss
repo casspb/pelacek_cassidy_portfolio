@@ -1,0 +1,10 @@
+@use '../abstracts' as a;
+
+footer{
+    background-color: a.$primary-color;
+    color: a.$base-colour;
+    
+    h1, h2,p{
+        text-align: center;
+    }
+}
