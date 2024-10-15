@@ -12,6 +12,13 @@ img, embed, object, video, picture {
     box-sizing: inherit; 
   }
   
+  * {
+   margin: 0;
+   padding: 0;
+   display: grid;
+}
+
+  
   /* ---Mini CSS reset--- */
   
   body, p, h1, h2, h3, h4, h5 {
@@ -19,11 +26,17 @@ img, embed, object, video, picture {
      padding: 0px;
   }
   
+
+  ul, li{
+   list-style: none;
+  }
+  
   /* ---Utility Classes--- */
   
   .hidden {
      display: none;
   }
+
   
   .box {
      background-color: powderblue;

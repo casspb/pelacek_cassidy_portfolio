@@ -5,15 +5,12 @@
     <meta charset="UTF-8">
     <!-- in mobile set initial zoom level of page to 100%, set site size to equal device width not a larger canvas that is shrunk down-->
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>Cassidy Pelacek Portfolio</title>
+    <title class="hidden">Cassidy Pelacek Portfolio</title>
     <!-- Link to reset or normalize before main.css
     only choose one -->
-    <link href="css/grid.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
-
+<link href="css/grid.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -21,10 +18,10 @@
         <nav>
             <ul>
                 <li><a href="index.html"> <img src="images/cassID-logo.svg" alt="Cassidys logo spelling Cass ID"> </a> </li>
-                <li><p> CONACT</p></li>
-                <li><p> WORKS</p></li>
-                <li><p> ABOUT ME</p></li>
-                <li><p> TESTIMONIALS</p></li>
+                <li><p>CONACT</p></li>
+                <li><p>WORKS</p></li>
+                <li><p>ABOUT ME</p></li>
+                <li><p>TESTIMONIALS</p></li>
             </ul>
         </nav>
 
@@ -34,10 +31,10 @@
     <main >
         <section class="header-image">
             <h1 class="hidden">header image</h1>
-        <img src="images/cassID-card.png" alt="placeholder for ID card">
+        <img src="images/cassID-card.svg" alt="placeholder for ID card" class="id-card col-span-full">
          </section>
 
-         <section class="about-me-section">
+         <section class="about-me-section l-col-span-full">
             <h1> Hello I'm Cassidy</h1>
             <p>Welcome to my corner of creativity, and a place to dive into a new adventure- like finding that elusive ID card tucked away in the depths of your wallet! <br>
  
@@ -60,17 +57,18 @@
             </div>
          </section>
 
-         <section class="testimonial-section">
-            <h1>THANK YOU</h1>
-            <h2>TESTIMONIAL</h2>
-         </section>
 
     </main>
 </div>
     <footer>
+        <section class="testimonial-section col-span-full">
+            <h1>THANK YOU</h1>
+            <h2>TESTIMONIAL</h2>
+         </section>
+
         <section class="contact">
             <h1>CONTACT</h1>
-            <h2>TIME TO REACH OUT</h2>
+            <h2>TIME TO REACH OUT?</h2>
 
             <!--section for contact form-->
         </section>

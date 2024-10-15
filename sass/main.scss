@@ -1,4 +1,17 @@
-@use 'abstracts';
+@use 'abstracts' as a;
 @use 'base';
 @use 'components';
 @use 'pages';
+
+//testimonials
+.testimonial-section{
+    background-color: a.$primary-color;
+    color: a.$base-colour;
+}
+
+//about me section
+
+.about-me-section{
+    text-align: center;
+}
+
