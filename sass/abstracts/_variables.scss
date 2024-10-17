@@ -23,41 +23,46 @@ h1 {
     font-size: $font-size-h1; // Base size for mobile
     font-family: $primary-font-family;
 
-    @media (max-width: $breakpoint-desktop) {
-        font-size: 128px; 
+    @media (min-width: $breakpoint-mobile) {
+        font-size: 48px; // Mobile size
     }
 
-    @media (max-width: $breakpoint-tablet) {
+    @media (min-width: $breakpoint-tablet) {
         font-size: 72px; 
     }
 
-    @media (max-width: $breakpoint-mobile) {
-        font-size: 48px; // Mobile size
+    @media (min-width: $breakpoint-desktop) {
+        font-size: 128px; 
     }
+
+
+
 }
 
 h2 {
     font-size: $font-size-h2; // Base size for mobile
     font-family: $primary-font-family;
 
-    @media (max-width: $breakpoint-desktop) {
-        font-size: 78px;
+    @media (min-width: $breakpoint-mobile) {
+        font-size: 32px; // Mobile size
     }
+   
 
-    @media (max-width: $breakpoint-tablet) {
+    @media (min-width: $breakpoint-tablet) {
         font-size: 64px;
     }
 
-    @media (max-width: $breakpoint-mobile) {
-        font-size: 32px; // Mobile size
+    @media (min-width: $breakpoint-desktop) {
+        font-size: 78px;
     }
+
 }
 
 h3 {
     font-size: $font-size-h3; // Base size for mobile
     font-family: $secondary-font-family;
 
-    @media (max-width: $breakpoint-mobile) {
+    @media (min-width: $breakpoint-mobile) {
         font-size: 16px; // Mobile size
     }
 }
@@ -66,15 +71,16 @@ p {
     font-size: $font-size-p; // Base size for mobile
     font-family: $primary-font-family;
 
-    @media (max-width: $breakpoint-desktop) {
-        font-size: 24px;
+
+    @media (min-width: $breakpoint-mobile) {
+        font-size: 14px; // Mobile size
     }
 
-    @media (max-width: $breakpoint-tablet) {
+    @media (min-width: $breakpoint-tablet) {
         font-size: 20px;
     }
 
-    @media (max-width: $breakpoint-mobile) {
-        font-size: 14px; // Mobile size
+    @media (min-width: $breakpoint-desktop) {
+        font-size: 24px;
     }
 }
