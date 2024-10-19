@@ -20,6 +20,8 @@ $font-size-h3: 16px;
 $font-size-p: 14px;
 
 h1 {
+    font-weight: 400;
+    display: grid;
     font-size: $font-size-h1; // Base size for mobile
     font-family: $primary-font-family;
 
@@ -28,11 +30,11 @@ h1 {
     }
 
     @media (min-width: $breakpoint-tablet) {
-        font-size: 72px; 
+        font-size: 72px;
     }
 
     @media (min-width: $breakpoint-desktop) {
-        font-size: 128px; 
+        font-size: 128px;
     }
 
 
@@ -40,6 +42,8 @@ h1 {
 }
 
 h2 {
+    font-weight: 400;
+    display: grid;
     font-size: $font-size-h2; // Base size for mobile
     font-family: $primary-font-family;
 
@@ -59,6 +63,8 @@ h2 {
 }
 
 h3 {
+    font-weight: 300;
+    display: grid;
     font-size: $font-size-h3; // Base size for mobile
     font-family: $secondary-font-family;
 
@@ -68,6 +74,8 @@ h3 {
 }
 
 p {
+    font-weight: 400;
+    display: grid;
     font-size: $font-size-p; // Base size for mobile
     font-family: $primary-font-family;
 
