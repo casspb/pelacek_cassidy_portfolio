@@ -15,8 +15,8 @@ img, embed, object, video, picture {
   * {
    margin: 0;
    padding: 0;
-   display: grid;
-}
+   text-decoration: none;
+  }
 
   
   /* ---Mini CSS reset--- */

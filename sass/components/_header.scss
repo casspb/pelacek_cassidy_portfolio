@@ -1,0 +1,81 @@
+//header
+
+@use '../abstracts' as a;
+
+.logo{
+    margin-left: 30px;
+   width: 133px;
+}
+
+
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: a.$base-colour;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+
+    #menu-bar{
+        display: none;
+    }
+
+    label{
+        width: 71px;
+        height: 71px;
+        cursor: pointer;
+        display: none;
+        margin-right: 30px;
+    }
+
+    .navbar{
+        ul{
+            list-style: none;
+            margin-right: 30px;
+        li{
+            text-transform: uppercase;
+            position: relative;
+            float: left;
+        a{
+            padding: 20px;
+            color: a.$body-text-color;
+            font-family: a.$primary-font-family;
+            display: block;
+        &:hover{
+            text-decoration: line-through;
+            text-decoration-color: a.$primary-color;
+            text-decoration-thickness: 2px;
+            }
+        }
+        }
+      }
+    }
+}
+
+
+
+@media(max-width:786px){
+
+    header{
+        label{
+            display: initial;
+        }
+
+        .navbar{
+            position: absolute;
+            top: 100%; left: 0; right: 0%;
+            background: a.$base-colour;
+            display:none;
+
+            ul li{
+                margin-left: 30px;
+                width: 100%;
+            }
+        }
+    }
+
+    #menu-bar:checked ~ .navbar{
+        display: initial;
+    }
+}
