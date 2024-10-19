@@ -11,19 +11,26 @@
 
 //main
 
+body{
+    background-color: a.$base-colour;
+}
+
 .header-image{
+    background-color: a.$base-colour;
     margin-top: 100px;
     width: 90%;
+
 }
 
 //about me section
 
 .about-me-section{
     text-align: center;
-    margin-top: 2em;
+    margin: 2em 4em;
+
 
     p{
-        margin: 2em 4em; 
+        margin: 2em 1em; 
     }
 }
 
@@ -31,7 +38,7 @@
 
 .project-video-section {
     position: relative;
-    width: 90%;
+    width: 80%;
     margin: auto;
 
     video {
@@ -167,13 +174,13 @@
     }
 
     .sorting-buttons-container {
-        display: flex; // Use flexbox for the sorting buttons
-        justify-content: center; // Center the buttons
-        flex-wrap: wrap; // Allow wrapping on smaller screens
-        gap: 0.5em; // Space between buttons
+        display: flex; 
+        justify-content: center; 
+        flex-wrap: wrap; 
+        gap: 0.5em;
 
         .sorting-buttons {
-            width: 182px; // Fixed width
+            width: 182px; 
             height: 40px;
             display: flex;                  
             justify-content: center;       
@@ -181,7 +188,7 @@
             text-align: center;        
             border-radius: 15px;
             background-color: a.$secondary-color;
-            margin: 1em 0; // Vertical margin only
+            margin: .5em 0; // Vertical margin only
 
             &:hover {
                 background-color: a.$primary-color;
@@ -192,47 +199,44 @@
     }
 }
     
-.grid-con {
-    display: flex; // Use flexbox for layout
-    flex-wrap: wrap; // Allow items to wrap to the next line
-    justify-content: center; // Center cards in the container
-    gap: 16px; // Space between cards
-}
-
 .project-card {
-    position: relative; // Position for absolute elements inside
-    flex: 1 1 300px; // Flexible basis for cards, minimum width of 300px
-    max-width: 379px; // Limit the width
-    height: 445px;
+    position: relative; 
+    height: 445px; 
+    max-width: 629px; 
+    width: 100%; 
     border-radius: 20px; 
     background-image: url('../images/pexels-ron-lach-8129898.jpg'); 
     background-size: cover; 
     background-position: center; 
     overflow: hidden; 
-    margin: 1em;
+    margin: 1em auto; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
 
     // Overlay content positioning
     h2, p, .sorting-buttons-variation {
         position: absolute; 
         z-index: 2; 
-        left: 30%; // Original left positioning
+        left: 30%; 
     }
 
     h2 {
         font-size: 32px;
-        bottom: 20%; // Positioning from the bottom
-        transform: translateX(-50%); // Adjust for the original offset
+        bottom: 23%; 
+        transform: translateX(-50%); 
     }
 
     p {
         font-size: 14px;
-        bottom: 15%; // Positioning from the bottom
-        transform: translateX(-40%); // Adjust for the original offset
+        bottom: 15%; 
+        transform: translateX(-40%); 
     }
 
     .sorting-buttons-variation {
-        bottom: 3%; // Positioning from the bottom
-        margin-left: -30px; // Original margin
+        bottom: 3%; 
+        margin-left: -30px; 
 
         p {
             padding: 10px 50px; 
@@ -244,12 +248,12 @@
     }
 
     .arrow {
-        position: absolute; // Ensure it’s positioned relative to the card
-        left: 50%; // Centering the arrow
-        bottom: 5%; // Original position from the bottom
-        transform: translateX(78%); // Adjust for centering
-        width: 88px;
-        height: 88px;
+        position: absolute; 
+        left: 50%; 
+        bottom: 5%;
+        transform: translateX(85%); 
+        width: 78px;
+        height: 78px;
         background-color: a.$secondary-color;
         border-radius: 50%; 
         display: flex; 
