@@ -18,6 +18,9 @@ img, embed, object, video, picture {
    text-decoration: none;
   }
 
+  div{
+   display: grid;
+  }
   
   /* ---Mini CSS reset--- */
   
