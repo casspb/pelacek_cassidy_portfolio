@@ -20,7 +20,7 @@
     <a href="#" class="logo"><img src="images/cassID-logo.svg" alt="cass ID logo"> </a>
 
     <input type="checkbox" id="menu-bar">
-    <label for="menu-bar"><img src="images/cassID-star.svg" class="menu-star"> </label>
+    <label for="menu-bar"><img src="images/green-star.svg" class="menu-star"> </label>
 
     <nav class="navbar">
         <ul>
@@ -83,50 +83,62 @@
         
 
             <!--section for dynamically displaying the projects-->
+           <div class="grid-con">
+    <div class="project-card col-span-4">
+        <h2>Project 1</h2>
+        <p>Little bit of info - 2024</p>
+        <div class="sorting-buttons-variation">
+            <p>DESIGN</p>
+        </div>
+        <div class="arrow">
+            <a href="project.html">
+                <img src="images/arrow-up-right.svg" alt="Arrow Icon">
+            </a>
+        </div>
+    </div>
 
-            <div class="grid-con">
-                <div class="project-card">
-                    <h2>Project 1</h2>
-                    <p>Little bit of info - 2024</p>
-                    <div class="sorting-buttons-variation">
-                        <p>DESIGN</p>
-                    </div>
-                    <div class="arrow">
-                        <a href="project.html">
-                            <img src="images/arrow-up-right.svg" alt="Arrow Icon">
-                        </a>
-                    </div>
-                </div>
+    <div class="project-card col-span-4">
+        <h2>Project 2</h2>
+        <p>Little bit of info - 2024</p>
+        <div class="sorting-buttons-variation">
+            <p>DESIGN</p>
+        </div>
+        <div class="arrow">
+            <a href="project.html">
+                <img src="images/arrow-up-right.svg" alt="Arrow Icon">
+            </a>
+        </div>
+    </div>
+
+    <div class="project-card col-span-4">
+        <h2>Project 3</h2>
+        <p>Little bit of info - 2024</p>
+        <div class="sorting-buttons-variation">
+            <p>DESIGN</p>
+        </div>
+        <div class="arrow">
+            <a href="project.html">
+                <img src="images/arrow-up-right.svg" alt="Arrow Icon">
+            </a>
+        </div>
+    </div>
+
+    <div class="project-card col-span-4">
+        <h2>Project 4</h2>
+        <p>Little bit of info - 2024</p>
+        <div class="sorting-buttons-variation">
+            <p>DESIGN</p>
+        </div>
+        <div class="arrow">
+            <a href="project.html">
+                <img src="images/arrow-up-right.svg" alt="Arrow Icon">
+            </a>
+        </div>
+
             
-                <div class="project-card">
-                    <h2>Project 2</h2>
-                    <p>Little bit of info - 2024</p>
-                    <div class="sorting-buttons-variation">
-                        <p>DESIGN</p>
-                    </div>
-                    <div class="arrow">
-                        <a href="project.html">
-                            <img src="images/arrow-up-right.svg" alt="Arrow Icon">
-                        </a>
-                    </div>
-                </div>
-            
-                <div class="project-card">
-                    <h2>Project 3</h2>
-                    <p>Little bit of info - 2024</p>
-                    <div class="sorting-buttons-variation">
-                        <p>DESIGN</p>
-                    </div>
-                    <div class="arrow">
-                        <a href="project.html">
-                            <img src="images/arrow-up-right.svg" alt="Arrow Icon">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            
-            
+    </div>
+</div>
+        
         
 </div>
 
@@ -138,13 +150,42 @@
         <section class="testimonial-section col-span-full">
             <h1>THANK YOU</h1>
             <h2>TESTIMONIAL</h2>
+
+            <div class="testimonial">
+                <h3>Allen Gaynor, Web Facilitator, FSU</h3>
+                <p>Multi-talented: able to handle roles of photographer, on screen representative and video editor, and programming, as indicated by working on a Jeopardy game. Does a great job in all of those roles. Meets deadlines, in most cases in far less time than I expect, and organized.
+                </p>
+            </div>
          </section>
 
-        <section class="contact">
+         <div class="star-divider">
+            <img src="images/green-star.svg" alt="green-star">
+            <img src="images/green-star.svg" alt="green-star">
+            <img src="images/green-star.svg" alt="green-star">
+         </div>
+
+         <section class="contact">
             <h1>CONTACT</h1>
             <h2>TIME TO REACH OUT?</h2>
-
-            <!--section for contact form-->
+        
+            <!-- Section for contact form -->
+            <form action="/submit" method="POST" class="contact-form grid-con">
+                <div class="col-span-4">
+                    <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                </div>
+                <div class="col-span-4">
+                    <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+                </div>
+                <div class="col-span-4">
+                    <input type="email" id="email" name="email" placeholder="sayhello@gmail.com" required>
+                </div>
+                <div class="col-span-4">
+                    <textarea id="message" name="message" placeholder="lets talk about the piece of ID you are missing!" rows="4" required></textarea>
+                </div>
+                <div class="col-span-2 col-start-3">
+                    <button type="submit">SEND</button>
+                </div>
+            </form>
         </section>
 
         <div class="bottom-footer">
@@ -152,10 +193,10 @@
                 might as well check out a bit more!</p>
 
             <ul class="footer-svg">
-               <li> <a href=""><img src="" alt="instagram logo"></a></li>
-               <li> <a href="" ><img src="" alt="linkedin logo"></a></li>
-               <li> <a href="" ><img src="" alt="github logo"></a></li>
-               <li>  <a href="" ><img src="" alt="spotify logo"></a></li>
+               <li> <a href=""><img src="images/instagram-svgrepo-com (1).svg" alt="instagram logo"></a></li>
+               <li> <a href="" ><img src="images/linkedin-161-svgrepo-com.svg" alt="linkedin logo"></a></li>
+               <li> <a href="" ><img src="images/github-svgrepo-com.svg" alt="github logo"></a></li>
+               <li>  <a href="" ><img src="images/spotify-162-svgrepo-com.svg" alt="spotify logo"></a></li>
             </ul>
         </div>
 
