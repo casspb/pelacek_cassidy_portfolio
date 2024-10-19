@@ -9,6 +9,7 @@
     <!-- Link to reset or normalize before main.css
     only choose one -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="css/grid.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
 </head>
@@ -49,9 +50,24 @@
                 Over the years, Ive been on a journey to discover my own identity, or as I like to call it, my “CassID.”</p>
          </section>
 
-         <section class="project-video-section">
-            <h1 class="hidden"> porject roundup video</h1>
-         </section>
+         <section class="project-video-section col-span-full">
+            <h1 class="hidden">Project Roundup Video</h1>
+            <div id="player-container">
+                <video controls preload="metadata" poster="images/scrapbook-cover-collage.png">
+                    <source src="video/tester-vid.MOV" type="video/mp4">
+                    <p>Your browser does not support the video tag.</p>
+                </video>
+                <button class="play-button" id="play-button"><i class="fa fa-play"></i></button>
+                <div class="video-controls" id="video-controls" style="display: none;">
+                    <button id="pause-button"><i class="fa fa-pause-circle-o"></i></button>
+                    <button id="stop-button"><i class="fa fa-stop-circle-o"></i></button>
+                    <i class="fa fa-volume-up"></i>
+                    <input type="range" id="change-vol" step="0.05" min="0" max="1" value="1">
+                    <button id="full-screen"><i class="fa fa-arrows-alt"></i></button>
+                </div>
+            </div>
+        </section>
+        
 
          <section class="project-works-section">
             <h1>Works</h1>
@@ -93,8 +109,6 @@
         </div>
 
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
