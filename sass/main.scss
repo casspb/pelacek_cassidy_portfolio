@@ -170,6 +170,7 @@ body{
     justify-items: center; // Center all grid items
 
     h1 {
+        margin-top: 1em;
         text-align: center;
     }
 
@@ -266,3 +267,38 @@ body{
         }
     }
 }
+
+//testimonials
+
+.testimonial{
+    margin: 1em;
+    h3{
+        color: a.$secondary-color;
+        margin-bottom: 1em;
+        margin-left: 3em;
+    }
+
+    .text-container {
+        position: relative; // Set relative positioning for the container
+        margin: 10px; // Add margin
+        padding: 10px; // Add padding
+        color: a.$body-text-color; // Text color variable
+        background-color: a.$base-colour; // Background color variable
+        border-radius: 10px; // Rounded corners
+        z-index: 2;
+    }
+    .background-svg {
+        position: absolute; // Position the SVG absolutely
+        bottom: 0;
+        z-index: 1;
+        left: -1rem; // Adjust horizontal position
+        width: 3rem; // Set width of the SVG
+        height: 3rem; // Set height of the SVG
+    }
+}
+
+.testimonial-container {
+    display: flex; // Use flexbox for inline display
+    gap: 20px; // Optional: Add some space between testimonials
+}
+
