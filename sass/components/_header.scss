@@ -41,6 +41,7 @@ header{
                 text-transform: uppercase;
                 position: relative;
                 float: left;
+                font-size: 24px;
     
                 a {
                     padding: 20px;
@@ -88,11 +89,16 @@ header{
             ul li{
                 margin-left: 30px;
                 width: 100%;
+
+                &:last-child{
+                    margin-bottom: 50px;
+                }
             }
         }
     }
 
     #menu-bar:checked ~ .navbar{
         display: initial;
+    
     }
 }
