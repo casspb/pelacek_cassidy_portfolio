@@ -71,4 +71,3 @@ player.addEventListener('ended', () => {
     playButton.style.display = 'flex'; // Show play button when video ends
     videoControls.style.display = 'none'; // Hide controls when video ends
 });
-

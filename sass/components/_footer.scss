@@ -9,22 +9,12 @@ footer{
     }
 }
 
-.testimonial-section{
-    padding-top: 2em;
-
-}
-
-.testimonial{
-    margin: 1em;
-    h3{
-        color: a.$secondary-color;
+.thank-you{
+    h1{
+    padding-top: 1em;
     }
- p{
-    color: a.$body-text-color;
-    background-color: a.$base-colour;
- }
-
 }
+
 
 .star-divider {
     display: flex;
@@ -49,6 +39,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center; 
+    padding-bottom: 2em;
     
     li a{
         cursor: pointer;
@@ -58,8 +49,12 @@ footer{
         margin: 5px 10px;
         height: 55px;
         width: 55px;
+    
     }
 }
+
+
+
 
 //contact 
 
