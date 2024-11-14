@@ -3,6 +3,10 @@
 @use 'components';
 @use 'pages';
 
+body{
+    margin-bottom: -2em;
+}
+
 //testimonials
 .testimonial-section{
     background-color: a.$primary-color;
@@ -174,28 +178,29 @@ body{
         text-align: center;
     }
 
-    .sorting-buttons-container {
-        display: flex; 
-        justify-content: center; 
-        flex-wrap: wrap; 
-        gap: 0.5em;
+}
 
-        .sorting-buttons {
-            width: 182px; 
-            height: 40px;
-            display: flex;                  
-            justify-content: center;       
-            align-items: center;    
-            text-align: center;        
-            border-radius: 15px;
-            background-color: a.$secondary-color;
-            margin: .5em 0; // Vertical margin only
+.sorting-buttons-container {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 0.5em;
 
-            &:hover {
-                background-color: a.$primary-color;
-                color: a.$base-colour;
-                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-            }
+    .sorting-buttons {
+        width: 182px; 
+        height: 40px;
+        display: flex;                  
+        justify-content: center;       
+        align-items: center;    
+        text-align: center;        
+        border-radius: 15px;
+        background-color: a.$secondary-color;
+        margin: .5em 0; // Vertical margin only
+
+        &:hover {
+            background-color: a.$primary-color;
+            color: a.$base-colour;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
     }
 }
