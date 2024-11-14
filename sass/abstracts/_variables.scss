@@ -73,20 +73,22 @@ h3 {
 
 p {
     font-weight: 400;
-    line-height: 22px;
     font-size: $font-size-p; // Base size for mobile
     font-family: $primary-font-family;
 
 
     @media (min-width: $breakpoint-mobile) {
+        line-height: 22px;
         font-size: 14px; // Mobile size
     }
 
     @media (min-width: $breakpoint-tablet) {
+        line-height: 32px;
         font-size: 20px;
     }
 
     @media (min-width: $breakpoint-desktop) {
+        line-height: 34px;
         font-size: 24px;
     }
 }

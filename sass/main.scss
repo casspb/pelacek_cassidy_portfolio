@@ -307,3 +307,9 @@ body{
     gap: 20px; // Optional: Add some space between testimonials
 }
 
+@media (min-width: 768px) {
+    .sorting-buttons-container {
+        padding-left: 2em;
+        justify-content: left; 
+        }
+}
