@@ -55,7 +55,7 @@ img, embed, object, video, picture {
  /* ---Mobile Library Grid Styles--- */
  .full-width-grid-con{
     display: grid;
-    grid-template-columns: 1fr minmax(0, 1512px) 1fr;
+    grid-template-columns: 1fr minmax,(0, 1200px), 1fr;
  }
 
  .grid-con{
@@ -164,7 +164,7 @@ img, embed, object, video, picture {
     .l-col-span-10 {grid-column: span 10 / span 10;}
     .l-col-span-11 {grid-column: span 11 / span 11;}
     .l-col-span-12 {grid-column: span 12 / span 12;}
-    .col-span-full {grid-column: 1 / -1;}
+    .l-col-span-full {grid-column: 1 / -1;}
  
     .l-col-start-1	{grid-column-start: 1;}
     .l-col-start-2	{grid-column-start: 2;}

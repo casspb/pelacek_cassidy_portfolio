@@ -8,6 +8,10 @@ $base-colour: #fffaff; // Added a hash for color code
 $primary-font-family: "DM Mono", monospace;
 $secondary-font-family: "Inter", sans-serif;
 
+.secondary-background-fill{
+    background-color: #38aecc;
+}
+
 // Fonts with breakpoints
 $breakpoint-mobile: 412px;
 $breakpoint-tablet: 768px;
