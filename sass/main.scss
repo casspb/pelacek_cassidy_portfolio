@@ -30,11 +30,11 @@ body{
 
 .about-me-section{
     text-align: center;
-    margin: 2em 4em;
+    margin: 2em 2em;
 
 
     p{
-        margin: 2em 1em; 
+        margin: 2em; 
     }
 }
 
@@ -308,8 +308,31 @@ body{
 }
 
 @media (min-width: 768px) {
+    .header-image{
+        width: 80%;
+        margin-bottom: 2em;
+        img{
+            margin-bottom: 4em;
+           }
+    }
+
     .sorting-buttons-container {
         padding-left: 2em;
         justify-content: left; 
         }
+
+        .about-me-section{
+            margin: 2em 3em;
+        
+            p{
+                margin: 2em 4em; 
+            }
+        }
+}
+
+@media (min-width: 1200px) {
+    .header-image{
+        width: 70%;
+    
+    }
 }
