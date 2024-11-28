@@ -65,12 +65,7 @@ footer{
     }
 
     .contact-form {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        grid-column-gap: 24px;
-        max-width: 1512px;
-        margin: 0 auto;
-        padding: 16px;
+
 
         input, textarea {
             padding: 10px;
