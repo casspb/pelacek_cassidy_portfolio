@@ -90,6 +90,7 @@ body{
         }
         .fa-volume-up {
             margin-left: auto;
+            margin-right: 10px;
             color: a.$primary-color;
             font-size: 30px;
           }
@@ -181,8 +182,7 @@ body{
 }
 
 .sorting-buttons-container {
-    display: flex; 
-    justify-content: center; 
+    display: flex;  
     flex-wrap: wrap; 
     gap: 0.5em;
 
@@ -209,6 +209,7 @@ body{
     position: relative; 
     height: 445px; 
     max-width: 629px; 
+    min-width: 350px;
     width: 100%; 
     border-radius: 20px; 
     background-image: url('../images/pexels-ron-lach-8129898.jpg'); 

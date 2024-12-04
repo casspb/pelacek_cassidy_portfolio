@@ -4,27 +4,27 @@
 
 .logo{
     margin-left: 30px;
-   width: 133px;
+   width: 110px;
 }
 
 
-
-header{
+header {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     background: a.$base-colour;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 10;
 
-    #menu-bar{
+    #menu-bar {
         display: none;
     }
 
-
-
-    label{
+    label {
+        margin: 10px;
         width: 71px;
         height: 71px;
         cursor: pointer;
@@ -32,38 +32,38 @@ header{
         margin-right: 30px;
     }
 
+
     .navbar {
         ul {
             list-style: none;
             margin-right: 30px;
-    
+
             li {
                 text-transform: uppercase;
                 position: relative;
                 float: left;
                 font-size: 21px;
-    
+
                 a {
                     padding: 20px;
                     color: a.$body-text-color;
                     font-family: a.$primary-font-family;
                     display: block;
-                    position: relative; 
-    
+                    position: relative;
+
                     .link-star {
-                        display: none; 
+                        display: none;
                         height: 20px;
                         margin-bottom: -4px;
                     }
-    
+
                     &:hover {
                         text-decoration: line-through;
                         text-decoration-color: a.$primary-color;
                         text-decoration-thickness: 2px;
-    
-                        .link-star {
-                            display: inline; 
 
+                        .link-star {
+                            display: inline;
                         }
                     }
                 }
@@ -72,33 +72,40 @@ header{
     }
 }
 
+@media (max-width: 786px) {
 
-@media(max-width:786px){
-
-    header{
-        label{
+    header {
+        label {
             display: initial;
         }
 
-        .navbar{
+        .navbar {
             position: absolute;
-            top: 100%; left: 0; right: 0%;
+            top: 100%;
+            left: 0;
+            right: 0%;
             background: a.$base-colour;
-            display:none;
+            display: none;
 
-            ul li{
+            ul li {
                 margin-left: 30px;
                 width: 100%;
 
-                &:last-child{
+                &:last-child {
                     margin-bottom: 50px;
                 }
             }
         }
     }
 
-    #menu-bar:checked ~ .navbar{
+    #menu-bar:checked ~ .navbar {
         display: initial;
-    
     }
+
+   
+    #menu-bar:checked ~ label .menu-star {
+        transform: rotate(360deg);
+        transition: transform 0.8s ease; 
+    }
+    
 }
