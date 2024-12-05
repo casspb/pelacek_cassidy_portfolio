@@ -22,8 +22,6 @@ body{
 .header-image{
     background-color: a.$base-colour;
     margin-top: 100px;
-    width: 80%;
-
 }
 
 //about me section
@@ -34,7 +32,7 @@ body{
 
 
     p{
-        margin: 2em; 
+        margin: 1em; 
     }
 }
 
@@ -199,17 +197,17 @@ body{
 #container1 {
     background-image: url('../images/green-star.svg');
     top: 10%;   
-    left: 10%;  
+    left: 0%;  
 }
 
 #container2 {
-    background-image: url('../images/green-star.svg');
+    background-image: url('../images/green-star-03.svg');
     top: 30%;   
     left: 70%; 
 }
 
 #container3 {
-    background-image: url('../images/cassID-star.svg');
+    background-image: url('../images/green-star-02.svg');
     top: 70%;  
     left: 40%;  
 }
@@ -344,31 +342,29 @@ body{
 }
 
 @media (min-width: 768px) {
-    .header-image{
-        width: 80%;
-        margin-bottom: 2em;
-        img{
-            margin-bottom: 4em;
-           }
-    }
+
+    
 
     .sorting-buttons-container {
         padding-left: 2em;
         justify-content: left; 
         }
 
-        .about-me-section{
-            margin: 2em 4em;
-        
-            p{
-                margin: 2em 10em 4em 10em; 
-            }
-        }
+    
 }
 
 @media (min-width: 1200px) {
-    .header-image{
-        width: 70%;
+
+
+    model-viewer{
+        display: visible;
+    }
+
+    .about-me-section{
+        margin: 2em 4em;
     
+        p{
+            margin: 2em 10em 4em 10em; 
+        }
     }
 }
