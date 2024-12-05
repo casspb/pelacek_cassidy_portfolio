@@ -44,10 +44,9 @@
          </section>
 
          <section class="about-me-section col-span-full">
-            <h1> Hello I'm Cassidy</h1>
-            <p>Welcome to my corner of creativity, and a place to dive into a new adventure- like finding that elusive ID card tucked away in the depths of your wallet!</p>
- 
-            <p> Over the years, Ive been on a journey to discover my own identity, or as I like to call it, my “CassID.”</p>
+            <h1> Hello I'm Cassidy!</h1>
+            <p>Welcome to my corner of creativity, and a place to dive into a new adventure- like finding that elusive ID card tucked away in the depths of your wallet! 
+                Over the years, Ive been on a journey to discover my own identity, or as I like to call it, my “CassID.” Throughout this journey I've discovered my love for code, and Front-end development, and Back-end!</p>
          </section>
 
          <section class="project-video-section col-span-full">
@@ -69,6 +68,7 @@
         </section>
         
 
+        <div class="full-width-grid-con  projects-card-section">
         <!--section where if u click on a button it will sort a project based on the type of project it was-->
         <div class="project-works-section grid-con">
             <div class="col-span-full">
@@ -84,8 +84,16 @@
         
 
             <!--section for dynamically displaying the projects-->
+
+  
            <div class="grid-con">
-    <div class="project-card col-span-full m-col-span-6 l-col-span-4">
+
+            <!--section for background stars-->
+            <div class="container" id="container1"></div>
+            <div class="container" id="container2"></div>
+            <div class="container" id="container3"></div>
+
+    <div class="project-card col-span-full m-col-span-6 l-col-span-6">
         <h2>Project 1</h2>
         <p>Little bit of info - 2024</p>
         <div class="sorting-buttons-variation">
@@ -98,7 +106,7 @@
         </div>
     </div>
 
-    <div class="project-card col-span-full m-col-span-6 l-col-span-4">
+    <div class="project-card col-span-full m-col-span-6 l-col-span-6">
         <h2>Project 2</h2>
         <p>Little bit of info - 2024</p>
         <div class="sorting-buttons-variation">
@@ -111,7 +119,7 @@
         </div>
     </div>
 
-    <div class="project-card col-span-full m-col-span-6 l-col-span-4">
+    <div class="project-card col-span-full m-col-span-6 l-col-span-6">
         <h2>Project 3</h2>
         <p>Little bit of info - 2024</p>
         <div class="sorting-buttons-variation">
@@ -124,7 +132,7 @@
         </div>
     </div>
 
-    <div class="project-card col-span-full m-col-span-6 l-col-span-4">
+    <div class="project-card col-span-full m-col-span-6 l-col-span-6">
         <h2>Project 4</h2>
         <p>Little bit of info - 2024</p>
         <div class="sorting-buttons-variation">
@@ -136,6 +144,7 @@
             </a>
         </div>     
     </div>
+</div>
 </div>
 
     </main>
@@ -253,7 +262,9 @@
 
 
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/background-stars.js"></script>
 </body>
 
 </html>

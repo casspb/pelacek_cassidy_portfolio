@@ -181,26 +181,61 @@ body{
 
 }
 
+.projects-card-section{
+    padding-bottom: 6em;
+    overflow: hidden;
+    position: relative;
+}
+
+//background stars
+#container1, #container2, #container3 {
+    position: absolute;  
+    z-index: -1;        
+    width: 612px;
+    height: 638px;
+    background-repeat: no-repeat;
+}
+
+#container1 {
+    background-image: url('../images/green-star.svg');
+    top: 10%;   
+    left: 10%;  
+}
+
+#container2 {
+    background-image: url('../images/green-star.svg');
+    top: 30%;   
+    left: 70%; 
+}
+
+#container3 {
+    background-image: url('../images/cassID-star.svg');
+    top: 70%;  
+    left: 40%;  
+}
+
+
 .sorting-buttons-container {
     display: flex;  
     flex-wrap: wrap; 
     gap: 0.5em;
 
     .sorting-buttons {
-        width: 182px; 
-        height: 40px;
+        width: 200px; 
+        height: 60px;
         display: flex;                  
         justify-content: center;       
         align-items: center;    
         text-align: center;        
-        border-radius: 15px;
+        border-radius: 30px;
         background-color: a.$secondary-color;
         margin: .5em 0; // Vertical margin only
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
 
         &:hover {
             background-color: a.$primary-color;
             color: a.$base-colour;
-            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
     }
 }
@@ -246,7 +281,7 @@ body{
         margin-left: -30px; 
 
         p {
-            padding: 10px 50px; 
+            padding: 5px 50px; 
             border-radius: 20px;
             background-color: a.$primary-color;
             color: a.$base-colour;
@@ -285,27 +320,27 @@ body{
     }
 
     .text-container {
-        position: relative; // Set relative positioning for the container
-        margin: 10px; // Add margin
-        padding: 10px; // Add padding
-        color: a.$body-text-color; // Text color variable
-        background-color: a.$base-colour; // Background color variable
-        border-radius: 10px; // Rounded corners
+        position: relative;
+        margin: 10px; 
+        padding: 10px; 
+        color: a.$body-text-color; 
+        background-color: a.$base-colour; 
+        border-radius: 10px; 
         z-index: 2;
     }
     .background-svg {
-        position: absolute; // Position the SVG absolutely
+        position: absolute; 
         bottom: 0;
         z-index: 1;
-        left: -1rem; // Adjust horizontal position
-        width: 3rem; // Set width of the SVG
-        height: 3rem; // Set height of the SVG
+        left: -1rem; 
+        width: 3rem;
+        height: 3rem; 
     }
 }
 
 .testimonial-container {
-    display: flex; // Use flexbox for inline display
-    gap: 20px; // Optional: Add some space between testimonials
+    display: flex; 
+    gap: 20px; 
 }
 
 @media (min-width: 768px) {
@@ -323,10 +358,10 @@ body{
         }
 
         .about-me-section{
-            margin: 2em 3em;
+            margin: 2em 4em;
         
             p{
-                margin: 2em 4em; 
+                margin: 2em 10em 4em 10em; 
             }
         }
 }

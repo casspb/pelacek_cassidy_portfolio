@@ -1,3 +1,5 @@
+(() => {
+
 // Select elements
 const playerCon = document.querySelector('#player-container');
 const player = document.querySelector('video');
@@ -71,3 +73,4 @@ player.addEventListener('ended', () => {
     playButton.style.display = 'flex'; // Show play button when video ends
     videoControls.style.display = 'none'; // Hide controls when video ends
 });
+})();

@@ -54,8 +54,7 @@ img, embed, object, video, picture {
 
  /* ---Mobile Library Grid Styles--- */
  .full-width-grid-con{
-    display: grid;
-    grid-template-columns: 1fr minmax,(0, 1200px), 1fr;
+    grid-template-columns: 1fr minmax,(0, 1512px), 1fr;
  }
 
  .grid-con{
@@ -142,7 +141,7 @@ img, embed, object, video, picture {
 
   /* ---Desktop Library Grid Styles--- */
   
-  @media screen and (min-width: 1200px) { 
+  @media screen and (min-width: 1512px) { 
   
     .grid-con { 
        display: grid; 
