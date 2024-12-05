@@ -1,0 +1,104 @@
+@use '../abstracts' as a;
+
+model-viewer{
+    display: none;
+}
+.id-card{
+   margin: 2em;
+}
+
+
+
+@media (min-width: 768px) {
+    .id-card{
+       display: none;
+    }
+model-viewer {
+    display: block;
+    border-radius: 15px;
+    width: 100%;
+    height: 520px;
+    background-color:a.$base-colour;
+    margin: 0 auto;
+  }
+  
+
+  
+  
+  //customize our own hotspot
+  
+  .Hotspot {
+  background: url(../images/green-star.svg) center no-repeat;
+    border: 0;
+    width: 45px;
+    height: 38px;
+  
+  }
+  
+  .Hotspot:not([data-visible]) {
+  opacity: 0;
+  pointer-events: none;
+  }
+  
+  .Hotspot:focus {
+    border: 4px solid rgb(0, 128, 200);
+    height: 32px;
+    outline: none;
+    width: 32px;
+  }
+  
+  .HotspotAnnotation {
+    visibility: hidden;
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; 
+    background: a.$base-colour;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5em 0.5em;
+    font-family: Futura, Helvetica Neue, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    max-width: 200px;
+    overflow-wrap: break-word;
+  }
+  
+  
+  .Hotspot:not([data-visible]) > * {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(calc(-50% + 4px));
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  
+  .HotspotAnnotation p {
+    color:a.$body-text-color;
+    line-height: 22px;
+    font-weight: 300;
+  }
+  
+  .HotspotAnnotation h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width: 900px) {
+    model-viewer {
+    
+        height: 600px;
+     
+      }
+}
+
+@media (min-width: 1300px) {
+    model-viewer {
+    
+        height: 980px;
+     
+      }
+}

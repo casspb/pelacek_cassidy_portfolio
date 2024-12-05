@@ -42,7 +42,7 @@ header {
                 text-transform: uppercase;
                 position: relative;
                 float: left;
-                font-size: 21px;
+                font-size: 26px;
 
                 a {
                     padding: 20px;
@@ -72,7 +72,7 @@ header {
     }
 }
 
-@media (max-width: 786px) {
+@media (max-width: 900px) {
 
     header {
         label {

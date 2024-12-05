@@ -38,8 +38,24 @@
 
     <main >
         
-        <section class="header-image grid-con col-span-full">
+        <section class="header-image full-width-grid-con">
             <h1 class="hidden">header image</h1>
+            <model-viewer class="col-span-full" src="model/id-card.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" shadow-intensity="1" camera-orbit="180deg 86.07deg 696m" field-of-view="20.11deg">
+                <button class="Hotspot" slot="hotspot-1" data-position="149.9862980018935m 96.43430030990552m 0m" data-normal="0m 0m -1m" data-visibility-attribute="visible">
+                    <div class="HotspotAnnotation"></div>
+                </button><button class="Hotspot" slot="hotspot-2" data-position="107.28834771936147m 0.07413567430472767m -2.0929025411605835m" data-normal="0m 0m -1m" data-visibility-attribute="visible">
+                    <div class="HotspotAnnotation"></div>
+                </button><button class="Hotspot" slot="hotspot-3" data-position="-92.0240793311601m -12.290467959990991m -2.0929025411605835m" data-normal="0m 0m -1m" data-visibility-attribute="visible">
+                    <div class="HotspotAnnotation"></div>
+                </button><button class="Hotspot" slot="hotspot-4" data-position="-10.633371858709097m -5.590268278052193m 5.940767884254456m" data-normal="0m 0m 1m" data-visibility-attribute="visible">
+                    <div class="HotspotAnnotation"></div>
+                </button><button class="Hotspot" slot="hotspot-5" data-position="-46.84843244442665m 15.946604821668586m -2.0929025411605835m" data-normal="0m 0m -1m" data-visibility-attribute="visible">
+                    <div class="HotspotAnnotation"></div>
+                </button>
+            
+        
+              </model-viewer>  
+
         <img src="images/cassID-card.svg" alt="placeholder for ID card" class="id-card col-span-full">
          </section>
 
@@ -230,10 +246,10 @@
         
             <!-- Section for contact form -->
             <form action="/submit" method="POST" class="contact-form grid-con">
-                <div class="col-span-full l-col-start-2 l-col-end-12">
+                <div class="col-span-full l-col-start-2 l-col-end-7">
                     <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
                 </div>
-                <div class="col-span-full l-col-start-2 l-col-end-12">
+                <div class="col-span-full l-col-start-7 l-col-end-12">
                     <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
                 </div>
                 <div class="col-span-full l-col-start-2 l-col-end-12 ">
@@ -262,9 +278,11 @@
 
 
     </footer>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/background-stars.js"></script>
+    <script src="js/id-card.js"></script>
 </body>
 
 </html>
