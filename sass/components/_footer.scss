@@ -115,11 +115,14 @@ footer{
 
 @media(min-width:786px){
     #first-name, #last-name, #email{
-        height: 50px;
+        height: 55px;
+        font-size: 24px;
+        font-family: a.$primary-font-family;
     }
 #message{
     width: 100%;
     height: 240px;
+    font-size: 24px;
 }
 
 }
