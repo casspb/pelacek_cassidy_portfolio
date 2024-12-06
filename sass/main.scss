@@ -7,11 +7,70 @@ body{
     margin-bottom: -2em;
 }
 
-//testimonials
-.testimonial-section{
+//* Testimonials section styling */
+.testimonial-section {
     background-color: a.$primary-color;
     color: a.$base-colour;
+    max-width: 100%;
+    margin: 8em 3em;
+    cursor: pointer;
 }
+
+.testimonial-section[data-animated="true"]{
+overflow: hidden;
+
+-webkit-mask: linear-gradient(90deg, transparent,white 20%, white 80%, transparent);
+mask: linear-gradient(90deg, transparent,white 20%, white 80%, transparent);
+}
+
+.testimonial-carousel{
+    gap: 1rem;
+    display: flex;
+    animation: scroll 40s linear infinite;
+    width: fit-content;
+     justify-content: center;
+    align-items: center;
+}
+
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 0.5rem));
+    }
+}
+
+.testimonial {
+    margin: 0.5em;
+
+
+    h3 {
+        color: a.$secondary-color;
+        margin-bottom: 1em;
+        margin-left: 3em;
+    }
+
+    .text-container {
+    
+        width: 500px;
+        position: relative;
+        margin: 20px;
+        padding: 20px;
+        color: a.$body-text-color;
+        background-color: a.$base-colour;
+        border-radius: 20px;
+        z-index: 2; 
+    }
+
+    .background-svg {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        left: -1rem;
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+
 
 //main
 
@@ -219,8 +278,8 @@ body{
     gap: 0.5em;
 
     .sorting-buttons {
-        width: 200px; 
-        height: 60px;
+        width: 110px; 
+        height: 40px;
         display: flex;                  
         justify-content: center;       
         align-items: center;    
@@ -240,7 +299,7 @@ body{
     
 .project-card {
     position: relative; 
-    height: 445px; 
+    height: 545px; 
     max-width: 629px; 
     min-width: 350px;
     width: 100%; 
@@ -275,7 +334,7 @@ body{
     }
 
     .sorting-buttons-variation {
-        bottom: 3%; 
+        bottom: 5%; 
         margin-left: -30px; 
 
         p {
@@ -289,7 +348,7 @@ body{
 
     .arrow {
         position: absolute; 
-        left: 50%; 
+        left: 55%; 
         bottom: 5%;
         transform: translateX(85%); 
         width: 78px;
@@ -300,6 +359,12 @@ body{
         justify-content: center; 
         align-items: center;
 
+        &:hover {
+            background-color: a.$primary-color;
+            color: a.$base-colour;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
         img {
             width: 62px;
             height: 62px;
@@ -307,42 +372,14 @@ body{
     }
 }
 
-//testimonials
 
-.testimonial{
-    margin: 1em;
-    h3{
-        color: a.$secondary-color;
-        margin-bottom: 1em;
-        margin-left: 3em;
-    }
 
-    .text-container {
-        position: relative;
-        margin: 10px; 
-        padding: 10px; 
-        color: a.$body-text-color; 
-        background-color: a.$base-colour; 
-        border-radius: 10px; 
-        z-index: 2;
-    }
-    .background-svg {
-        position: absolute; 
-        bottom: 0;
-        z-index: 1;
-        left: -1rem; 
-        width: 3rem;
-        height: 3rem; 
-    }
-}
-
-.testimonial-container {
-    display: flex; 
-    gap: 20px; 
-}
 
 @media (min-width: 768px) {
-
+    .sorting-buttons-container  .sorting-buttons {
+        width: 200px;
+        height: 60px;
+    }
     
 
     .sorting-buttons-container {
