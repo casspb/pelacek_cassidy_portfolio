@@ -24,10 +24,10 @@
 
     <nav class="navbar">
         <ul>
-            <li><a href="#">contact <img src="images/cassID-star.svg" class="link-star"></a> </li>
-            <li><a href="project.html">works<img src="images/cassID-star.svg" class="link-star"> </a></li>
-            <li><a href="#">about me<img src="images/cassID-star.svg" class="link-star"></a> </li>
-            <li><a href="#">testimonials<img src="images/cassID-star.svg" class="link-star"></a> </li>
+            <li id="section1Btn"><a href="#">contact <img src="images/cassID-star.svg" class="link-star"></a> </li>
+            <li id="section2Btn" ><a href="#">works<img src="images/cassID-star.svg" class="link-star"> </a></li>
+            <li id="section3Btn"><a href="#">about me<img src="images/cassID-star.svg" class="link-star"></a> </li>
+            <li id="section4Btn"><a href="#">testimonials<img src="images/cassID-star.svg" class="link-star"></a> </li>
 
         </ul>
     </nav>
@@ -59,7 +59,7 @@
         <img src="images/cassID-card.svg" alt="placeholder for ID card" class="id-card col-span-full">
          </section>
 
-         <section class="about-me-section col-span-full">
+         <section id="section3" class="about-me-section col-span-full">
             <h1> Hello I'm Cassidy!</h1>
             <p>Welcome to my corner of creativity, and a place to dive into a new adventure- like finding that elusive ID card tucked away in the depths of your wallet! 
                 <br> Over the years, Ive been on a journey to discover my own identity, or as I like to call it, my “CassID.” Throughout this journey I've discovered my love for code, and Front-end development, and Back-end!</p>
@@ -84,7 +84,7 @@
         </section>
         
 
-        <div class="full-width-grid-con  projects-card-section">
+        <div id="section2" class="full-width-grid-con  projects-card-section">
         <!--section where if u click on a button it will sort a project based on the type of project it was-->
         <div class="project-works-section grid-con">
             <div class="col-span-full">
@@ -166,7 +166,7 @@
     </main>
     <footer>
 
-        <div class="thank-you">
+        <div id="section4" class="thank-you">
         <h1 class="col-span-full">THANK YOU</h1>
         <h2 class="col-span-full">TESTIMONIAL</h2>
     </div>
@@ -238,7 +238,7 @@
             <img src="images/green-star.svg" alt="green-star">
          </div>
 
-         <section class="contact">
+         <section class="contact" id="section1">
             <h1>CONTACT</h1>
             <h2>TIME TO REACH OUT?</h2>
         
@@ -278,10 +278,12 @@
     </footer>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/ScrollToPlugin.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/background-stars.js"></script>
     <script src="js/id-card.js"></script>
     <script src="js/testimonial-carousel.js"></script>
+    <script src="js/scroll-animation.js"></script>
 </body>
 
 </html>
