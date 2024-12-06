@@ -1,3 +1,4 @@
+(() => {
 const scrollers = document.querySelectorAll(".testimonial-section");
 
 addAnimation();
@@ -42,3 +43,4 @@ function pauseAnimation(scrollerInner) {
 function resumeAnimation(scrollerInner) {
     scrollerInner.style.animationPlayState = 'running';
 }
+})();

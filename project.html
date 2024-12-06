@@ -26,12 +26,11 @@
         <label for="menu-bar"><img src="images/green-star.svg" class="menu-star"> </label>
     
         <nav class="navbar">
-            <!--these are gonna jump to the parts of the pages, but this is just how I have it typed out for now-->
             <ul>
-                <li><a href="#">contact <img src="images/cassID-star.svg" class="link-star"></a> </li>
-                <li><a href="project.html">works<img src="images/cassID-star.svg" class="link-star"> </a></li>
-                <li><a href="#">about me<img src="images/cassID-star.svg" class="link-star"></a> </li>
-                <li><a href="#">testimonials<img src="images/cassID-star.svg" class="link-star"></a> </li>
+                <li id="section1Btn"><a href="#">contact <img src="images/cassID-star.svg" class="link-star"></a> </li>
+                <li id="section2Btn" ><a href="#">works<img src="images/cassID-star.svg" class="link-star"> </a></li>
+                <li id="section3Btn"><a href="index.html">about me<img src="images/cassID-star.svg" class="link-star"></a> </li>
+                <li id="section4Btn"><a href="index.html">testimonials<img src="images/cassID-star.svg" class="link-star"></a> </li>
     
             </ul>
         </nav>
@@ -103,7 +102,7 @@
     </main>
 
     <footer>
-        <section class="contact">
+        <section class="contact" id="section1">
             <h1>CONTACT</h1>
             <h2>TIME TO REACH OUT?</h2>
         
@@ -141,8 +140,10 @@
 
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/ScrollToPlugin.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/scroll-animation.js"></script>
 </body>
 
 </html>
