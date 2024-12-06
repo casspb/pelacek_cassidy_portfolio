@@ -1,4 +1,5 @@
 (() => {
+    const menuItems = document.querySelectorAll(".navbar ul li");
     //menu scroll to animation 
     gsap.registerPlugin(ScrollToPlugin)
 
@@ -8,4 +9,10 @@
         });
       });
 
+      menuItems.forEach(item => {
+        item.addEventListener("click", () => {
+            // Uncheck the #menu-bar to hide the menu
+            document.getElementById("menu-bar").checked = false;
+        });
+    });
 })();
