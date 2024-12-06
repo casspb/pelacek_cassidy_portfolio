@@ -26,15 +26,19 @@ This portfolio is designed to highlight my projects and skills, as well as show 
 - **SCSS:** For styling and responsive design.
 - **JavaScript:** For interactivity and enhanced user experience.
 - **PHP:** For server-side processing and dynamic content.
+- **Greensock:** For animations like scroll to and moving stars.
+- **Model Viewer:** for ID card.
 
 ## Installation
 
 To run this portfolio locally, follow these steps:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/casspb/pelacek_cassidy_portfolio.git
+2. **Open in prefered code editor** make sure to have live server for model viewer to function
 
 ## Licence
 
 MIT licence
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/casspb/pelacek_cassidy_portfolio.git
+
