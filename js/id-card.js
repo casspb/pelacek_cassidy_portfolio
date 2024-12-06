@@ -11,19 +11,19 @@
       },
       {
         id: 'hotspot-2',
-        p: 'silly old me is invisible'
+        p: 'silly old me is invisible \u{1F47B}'
       },
       {
         id: 'hotspot-3',
-        p: 'I will not be expiring!!'
+        p: 'I will not be expiring!! \u{1F972}'
       },
       {
         id: 'hotspot-4',
-        p: 'I can drive, thankfully'
+        p: 'I can drive, thankfully \u{1F600}'
       },
       {
         id: 'hotspot-5',
-        p: 'available for work!'
+        p: 'Available for work!'
       }
     ];
   

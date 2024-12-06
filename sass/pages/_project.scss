@@ -6,6 +6,12 @@
     margin-bottom: .5em;
 
 
+
+    .title-buttons{
+        margin: 0 1em;
+    }
+
+
     .title-star{
         height: 1em;
         margin-bottom: -10px;
@@ -13,11 +19,11 @@
 }
 
 .project-base {
-    margin: 1em 0;
+    
 
     p{
         margin: 10px 0;
-         padding: 0 2em;  
+         
     }
 
 }
@@ -29,6 +35,7 @@
 
 .project-about{
     background-color: a.$accent-color;
+    margin-top: 2em;
     padding: 0 2em;  
 
     h1{
@@ -78,7 +85,7 @@
 .photo-gallery{
     margin: 1em 0;
     img{
-        border-radius: 20px;
+        border-radius: 15px;
         margin-top: 1em;
         margin-bottom: 1em;
     }
@@ -102,5 +109,22 @@
 @media(min-width:786px){
     .title{
        margin-bottom: 4em;
+
+       .title-buttons{
+
+        margin-bottom: 3em;
     }
+
+    }
+
+    .project-about{
+        margin-top: 8em;
+    }
+}
+
+@media(min-width:1200px){
+    .title{
+       
+        margin-top: 14em;
+     }
 }
