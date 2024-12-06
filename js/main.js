@@ -1,4 +1,5 @@
 (() => {
+    //video player stuff
     const playerCon = document.querySelector('#player-container');
     const player = document.querySelector('video');
     const pauseButton = document.querySelector('#pause-button');
@@ -57,6 +58,8 @@
             pauseVideo();
         }
     });
+
+    
     stopButton.addEventListener("click", stopVideo);
     volumeSlider.addEventListener("input", changeVolume);
     fullScreen.addEventListener("click", toggleFullScreen);
