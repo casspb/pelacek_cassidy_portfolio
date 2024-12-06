@@ -63,6 +63,7 @@
     stopButton.addEventListener("click", stopVideo);
     volumeSlider.addEventListener("input", changeVolume);
     fullScreen.addEventListener("click", toggleFullScreen);
+    bigPlay.addEventListener("click", playVideo);
 
     player.addEventListener('play', () => {
         videoControls.style.display = 'flex';
