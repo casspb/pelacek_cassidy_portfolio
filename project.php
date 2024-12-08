@@ -39,6 +39,15 @@ while ($category_row = mysqli_fetch_array($categories_results)) {
     <title>Cassidy Pelacek Project</title>
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+
+     <!-- External scripts with async (non-blocking) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/ScrollToPlugin.min.js" async></script>
+
+    <!-- Your custom scripts with defer (to ensure DOM is loaded first) -->
+    <script src="js/scroll-animation.js" defer></script>
+   
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
@@ -109,7 +118,7 @@ while ($category_row = mysqli_fetch_array($categories_results)) {
                 <img class="col-span-full" src="images/<?php echo $mediaArray[2]; ?>" alt="Project Image">
             
                 <img class="col-span-2 m-col-span-6" src="images/<?php echo $mediaArray[3]; ?>" alt="Project Image">
-                <img class="col-span-2 m-col-span-6" src="images/<?php echo $mediaArray[5]; ?>" alt="Project Image">
+                <img class="col-span-2 m-col-span-6" src="images/<?php echo $mediaArray[4]; ?>" alt="Project Image">
                 <img class="col-span-2 m-col-span-6" src="images/<?php echo $mediaArray[5]; ?>" alt="Project Image">
                 <img class="col-span-2 m-col-span-6" src="images/<?php echo $mediaArray[6]; ?>" alt="Project Image">
             </div>
@@ -129,7 +138,7 @@ while ($category_row = mysqli_fetch_array($categories_results)) {
             <h1>CONTACT</h1>
             <h2>TIME TO REACH OUT?</h2>
         
-            <form action="/submit" method="POST" class="contact-form grid-con">
+            <form action="send_mail.php" method="POST" class="contact-form grid-con">
                 <div class="col-span-full l-col-start-2 l-col-end-7">
                     <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
                 </div>
@@ -159,10 +168,6 @@ while ($category_row = mysqli_fetch_array($categories_results)) {
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/ScrollToPlugin.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/scroll-animation.js"></script>
 </body>
 
 </html>
