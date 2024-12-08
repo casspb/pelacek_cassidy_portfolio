@@ -72,3 +72,5 @@ if (empty($errors)) {
 }
 
 ?>
+
+<script src="js/contact.js" defer></script>
