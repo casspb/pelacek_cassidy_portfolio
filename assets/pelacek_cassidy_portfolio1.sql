@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 27, 2024 at 11:36 PM
+-- Generation Time: Dec 08, 2024 at 07:40 PM
 -- Server version: 8.3.0
 -- PHP Version: 8.2.18
 
@@ -57,7 +57,49 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `email` varchar(250) NOT NULL,
   `message` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `first`, `last`, `email`, `message`) VALUES
+(25, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'TEST'),
+(26, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'help'),
+(27, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'help'),
+(28, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(29, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(30, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(31, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(32, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(33, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(34, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(35, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(36, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(37, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(38, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(39, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(40, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(41, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'afcf'),
+(42, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'CC'),
+(43, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'CC'),
+(44, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'CC'),
+(45, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'CC'),
+(46, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'CC'),
+(47, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'CC'),
+(48, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'CC'),
+(49, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'CC'),
+(50, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'CC'),
+(51, 'Cassidy', 'Pelacek-Boutili', 'cassidypelacek@gmail.com', 'cxc'),
+(52, 'Cassidy', 'Pelacek-Boutili', 'cassidypelacek@gmail.com', 'cxc'),
+(53, 'Cassidy', 'Pelacek-Boutili', 'cassidypelacek@gmail.com', 'cxc'),
+(54, 'Cassidy', 'Pelacek-Boutili', 'cassidypelacek@gmail.com', 'ASCXc'),
+(55, 'Cassidy', 'Pelacek-Boutili', 'cassidypelacek@gmail.com', 'ASCXc'),
+(56, 'Cassidy', 'Pelacek-Boutili', 'cassidypelacek@gmail.com', 'ASCXc'),
+(57, 'Cassidy', 'Pelacek-Boutili', 'cassidypelacek@gmail.com', 'ASCXc'),
+(58, 'Cassidy', 'Pelacek-Boutili', 'cassidypelacek@gmail.com', 'ASCXc'),
+(59, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'sCAasc'),
+(60, 'Cassidy', 'Pelacek-Boutilier', 'cassidypelacek@gmail.com', 'test');
 
 -- --------------------------------------------------------
 
@@ -71,7 +113,35 @@ CREATE TABLE IF NOT EXISTS `media` (
   `media` varchar(350) NOT NULL,
   `project_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `media`
+--
+
+INSERT INTO `media` (`id`, `media`, `project_id`) VALUES
+(1, 'jeopardy-event-1.jpg', 3),
+(2, 'jeopardy-2.png', 3),
+(3, 'jeopardy-1.png', 3),
+(4, 'jeopardy-event-4.jpg', 3),
+(5, 'jeopardy-event-2.jpg', 3),
+(6, 'jeopardy-event-5.jpg', 3),
+(7, 'jeopardy-event-3.jpg', 3),
+(8, 'jeopardy-1.png', 3),
+(9, 'seven-1.png', 1),
+(10, 'seven-2.png', 1),
+(11, 'seven-3.jpg', 1),
+(12, 'seven-4.png', 1),
+(13, 'seven-5.jpg', 1),
+(14, 'seven-6.jpg', 1),
+(15, 'seven-7.png', 1),
+(16, 'earbuds-2.png', 2),
+(17, 'earbuds-6.png', 2),
+(18, 'earbuds-3.png', 2),
+(19, 'earbuds-4.png', 2),
+(20, 'earbuds-7.png', 2),
+(21, 'earbuds-3.png', 2),
+(22, 'earbuds-5.png', 2);
 
 -- --------------------------------------------------------
 
@@ -153,7 +223,17 @@ CREATE TABLE IF NOT EXISTS `testimonials` (
   `job` varchar(150) NOT NULL,
   `testimonial` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `testimonials`
+--
+
+INSERT INTO `testimonials` (`id`, `name`, `job`, `testimonial`) VALUES
+(1, 'Michelle Obama', 'Carpentry', 'Cassidy was a great employee, as she helped me put up my carpentry website and ultimately boosted my customer engagement. I\'m doing better than ever!'),
+(2, 'Theodore Horton', 'Business Analyst', 'She created a database for my company to organized employee information, and retrieve for payments'),
+(3, 'Mihail Suvi', 'Startup- Get Moving', 'She improved the flow of our website, and optimized communication between customers, and management and company representatives for quicker interaction '),
+(4, 'Allen Gaynor', 'Web Facilitator - FSU', 'Multi-talented: able to handle roles of photographer, on-screen representative, and video editor, and programming, as indicated by working on a Jeopardy game. Does a great job in all of those roles. Meets deadlines, in most cases in far less time than I expect, and organized.\r\n               ');
 
 -- --------------------------------------------------------
 
