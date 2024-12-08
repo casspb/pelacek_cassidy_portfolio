@@ -26,7 +26,6 @@ while ($category_row = mysqli_fetch_array($categories_details_results)) {
 }
 
 
-
 ?>
 
 <head>
@@ -135,31 +134,37 @@ while ($category_row = mysqli_fetch_array($categories_details_results)) {
                 <div class="container" id="container3"></div>
 
                 <?php
-                    while ($row = mysqli_fetch_array($projects_results)) {
-                        $project_id = $row['project_id'];
-                        $category_names = isset($project_categories[$project_id]) ? $project_categories[$project_id] : [];
+    while ($row = mysqli_fetch_array($projects_results)) {
+        $project_id = $row['project_id'];
+        $category_names = isset($project_categories[$project_id]) ? $project_categories[$project_id] : [];
 
-                        // Combine categories into a string to use as a data attribute
-                        $categories_string = implode(' ', $category_names);
+        // Combine categories into a string to use as a data attribute
+        $categories_string = implode(' ', $category_names);
 
-                        echo '
-                            <div class="project-card col-span-4 m-col-span-6 l-col-span-6" data-categories="' . $categories_string . '">
-                                <img src="images/pexels-ron-lach-8129898.jpg" alt="Project 1 Image" class="project-image">
-                                <div class="content-overlay">
-                                    <h2>' . $row['name'] . '</h2>
-                                    <p>Check out this project - ' . $row['year'] . '</p>
-                                    <div class="sorting-buttons-variation">
-                                        <p>' . implode(', ', $category_names) . '</p>  
-                                    </div>
-                                    <div class="arrow">
-                                        <a href="project.php?id=' . $row['project_id'] . '">
-                                            <img src="images/arrow-up-right.svg" alt="Arrow Icon">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>';
-                    }
-                ?>
+        // Fetch the first image for this project
+        $first_image_query = 'SELECT media FROM media WHERE project_id = ' . $project_id . ' LIMIT 1';
+        $first_image_result = mysqli_query($connect, $first_image_query);
+        $first_image = mysqli_fetch_assoc($first_image_result);
+        $image_src = $first_image ? 'images/' . $first_image['media'] : 'images/placeholder.jpg'; // Use a default image if no media
+
+        echo '
+            <div class="project-card col-span-4 m-col-span-6 l-col-span-6" data-categories="' . $categories_string . '">
+                <img src="' . $image_src . '" alt="Project Image" class="project-image">
+                <div class="content-overlay">
+                    <h2>' . $row['name'] . '</h2>
+                    <p>Check out this project - ' . $row['year'] . '</p>
+                    <div class="sorting-buttons-variation">
+                        <p>' . implode(', ', $category_names) . '</p>  
+                    </div>
+                    <div class="arrow">
+                        <a href="project.php?id=' . $row['project_id'] . '">
+                            <img src="images/arrow-up-right.svg" alt="Arrow Icon">
+                        </a>
+                    </div>
+                </div>
+            </div>';
+    }
+?>
             </div>
         </div>
     </main>

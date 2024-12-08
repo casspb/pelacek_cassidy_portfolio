@@ -59,18 +59,12 @@ if (empty($errors)) {
         mail($to, $subject, $email_message);
 
         // Redirect to the index page
-        header('Location: index.php');
-    } else {
-        // If query fails, output error
-        echo 'Error: ' . mysqli_error($connect);
-    }
-} else {
-    // Output validation errors
-    foreach ($errors as $error) {
-        echo $error . '<br>';
+        header('Location: sent-message.html');
+    }else{
+        for($i=0; $i < count($errors); $i++) {
+            echo $errors[$i].'<br>';
+        }
     }
 }
 
 ?>
-
-<script src="js/contact.js" defer></script>
