@@ -2,12 +2,17 @@
 <html lang="en">
 
 <?php
-
 require_once('includes/connect.php');
 
 // Fetch the project details
 $query = 'SELECT * FROM project WHERE id = ' . $_GET['id'];
+$query_categories = 'SELECT project.id AS project_id, category.id AS category_id, category.category AS category_name
+                     FROM project
+                     JOIN project_category ON project.id = project_category.project_id
+                     JOIN category ON category.id = project_category.category_id';
+
 $results = mysqli_query($connect, $query);
+$categories_results = mysqli_query($connect, $query_categories);
 $row = mysqli_fetch_assoc($results);
 
 // Fetch all media related to this project
@@ -15,8 +20,15 @@ $queryMedia = 'SELECT media FROM media WHERE project_id = ' . $_GET['id'] . ' OR
 $mediaResults = mysqli_query($connect, $queryMedia);
 $mediaArray = [];
 
+// Store each media filename in an array
 while ($mediaRow = mysqli_fetch_assoc($mediaResults)) {
-    $mediaArray[] = $mediaRow['media'];  // Store each media filename in an array
+    $mediaArray[] = $mediaRow['media'];  
+}
+
+$project_categories = [];
+// Create an associative array with project_id as key and category_name as value
+while ($category_row = mysqli_fetch_array($categories_results)) {
+    $project_categories[$category_row['project_id']][] = $category_row['category_name'];
 }
 
 ?>
@@ -53,9 +65,13 @@ while ($mediaRow = mysqli_fetch_assoc($mediaResults)) {
         <section class="title grid-con">
             <h1 class="col-span-full"><?php echo $row['name']; ?> <img class="title-star" src="images/cassID-star.svg" alt="logo star"></h1>
             <div class="sorting-buttons-container title-buttons col-start-1 col-span-full m-col-start-1 m-col-span-6">
-                <div class="sorting-buttons"><p>DESIGN</p></div>
-                <div class="sorting-buttons"><p>MOTION</p></div>
-            </div>
+            <?php
+
+             foreach ($project_categories[$row['id']] as $category_name) {
+                echo '<div class="sorting-buttons"><p>' . $category_name . '</p></div>';
+                }
+                ?>
+             </div>
    
             <div class="project-base col-span-4 m-col-span-6">
                 <p><?php echo $row['company']; ?></p>
