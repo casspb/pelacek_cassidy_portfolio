@@ -1,7 +1,6 @@
-
 <?php
 
-// Connecting to the database
+// Connecting to the database using PDO
 require_once('includes/connect.php');
 
 // Gather elements from the submitted form
@@ -38,33 +37,43 @@ if (empty($email)) {
 }
 
 if (empty($errors)) {
-    // Escape form data for security
-    $first = mysqli_real_escape_string($connect, $first);
-    $last = mysqli_real_escape_string($connect, $last);
-    $email = mysqli_real_escape_string($connect, $email);
-    $message = mysqli_real_escape_string($connect, $message);
+    // Use PDO to prepare the statement and bind parameters to avoid SQL injection
+    try {
+        $stmt = $connection->prepare("INSERT INTO contact (first, last, email, message) VALUES (:first, :last, :email, :message)");
 
-    // Insert new row into the contacts table
-    $query = "INSERT INTO contact (first, last, email, message) VALUES ('$first', '$last', '$email', '$message')";
+        // Bind the form data to the prepared statement
+        $stmt->bindParam(':first', $first, PDO::PARAM_STR);
+        $stmt->bindParam(':last', $last, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':message', $message, PDO::PARAM_STR);
 
-    if (mysqli_query($connect, $query)) {
-        // Send email to myself
-        $email_message = "You have received a new contact form submission:\n\n";
-        $email_message .= "Name: ".$first." ".$last."\n";
-        $email_message .= "Email: ".$email."\n\n";
-        
-        $to = 'cassidypelacek@gmail.com';
-        $subject = 'Message from your Portfolio site!';
-        
-        mail($to, $subject, $email_message);
+        // Execute the statement
+        if ($stmt->execute()) {
+            // Send email to myself
+            $email_message = "You have received a new contact form submission:\n\n";
+            $email_message .= "Name: ".$first." ".$last."\n";
+            $email_message .= "Email: ".$email."\n\n";
+            
+            $to = 'cassidypelacek@gmail.com';
+            $subject = 'Message from your Portfolio site!';
+            
+            mail($to, $subject, $email_message);
 
-        // Redirect to the index page
-        header('Location: sent-message.html');
-    }else{
-        for($i=0; $i < count($errors); $i++) {
-            echo $errors[$i].'<br>';
+            // Redirect to the index page
+            header('Location: sent-message.html');
+            exit;
+        } else {
+             echo "There was an error submitting the form.";
         }
+        //catch for PDO errors as well, since I have a lot of issues with it AHHH
+    } catch (PDOException $e) {
+      
+        echo "Error: " . $e->getMessage();
+    }
+} else {
+    foreach ($errors as $error) {
+        echo $error . '<br>';
     }
 }
-
 ?>
+

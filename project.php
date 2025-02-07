@@ -2,32 +2,45 @@
 <html lang="en">
 
 <?php
-require_once('includes/connect.php');
+require_once('includes/connect.php');  // Ensure this connects with PDO
 
-// Fetch the project details
-$query = 'SELECT * FROM project WHERE id = ' . $_GET['id'];
+// Fetch the project details using PDO
+$query = 'SELECT id, name, company, role, url, year, description, feedback, challenges, keywords FROM project WHERE id = :id';
 $query_categories = 'SELECT project.id AS project_id, category.id AS category_id, category.category AS category_name
                      FROM project
                      JOIN project_category ON project.id = project_category.project_id
                      JOIN category ON category.id = project_category.category_id';
 
-$results = mysqli_query($connect, $query);
-$categories_results = mysqli_query($connect, $query_categories);
-$row = mysqli_fetch_assoc($results);
+// Prepare and execute the query for project details
+$stmt = $connection->prepare($query);
+$stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT); // Bind the id parameter
+$stmt->execute();
+$project_row = $stmt->fetch(PDO::FETCH_ASSOC);  // Get the project details
+$stmt = null;  // Close the statement
+
+// Prepare and execute the query for categories related to the project
+$stmt = $connection->prepare($query_categories);
+$stmt->execute();
+$categories_results = $stmt->fetchAll(PDO::FETCH_ASSOC);  // Fetch all categories for the project
+$stmt = null;  // Close the statement
 
 // Fetch all media related to this project
-$queryMedia = 'SELECT media FROM media WHERE project_id = ' . $_GET['id'] . ' ORDER BY media.id ASC';
-$mediaResults = mysqli_query($connect, $queryMedia);
-$mediaArray = [];
+$queryMedia = 'SELECT media FROM media WHERE project_id = :project_id ORDER BY id ASC';
+$stmt = $connection->prepare($queryMedia);
+$stmt->bindParam(':project_id', $_GET['id'], PDO::PARAM_INT);  // Bind the project id parameter
+$stmt->execute();
+$mediaResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt = null;  // Close the statement
 
 // Store each media filename in an array
-while ($mediaRow = mysqli_fetch_assoc($mediaResults)) {
+$mediaArray = [];
+foreach ($mediaResults as $mediaRow) {
     $mediaArray[] = $mediaRow['media'];  
 }
 
-$project_categories = [];
 // Create an associative array with project_id as key and category_name as value
-while ($category_row = mysqli_fetch_array($categories_results)) {
+$project_categories = [];
+foreach ($categories_results as $category_row) {
     $project_categories[$category_row['project_id']][] = $category_row['category_name'];
 }
 
@@ -40,13 +53,12 @@ while ($category_row = mysqli_fetch_array($categories_results)) {
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 
-     <!-- External scripts with async (non-blocking) -->
+    <!-- External scripts with async (non-blocking) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" async></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/ScrollToPlugin.min.js" async></script>
 
     <!-- Your custom scripts with defer (to ensure DOM is loaded first) -->
     <script src="js/scroll-animation.js" defer></script>
-   
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +66,6 @@ while ($category_row = mysqli_fetch_array($categories_results)) {
 </head>
 
 <body>
-   
     <header>
         <a href="index.php" class="logo"><img src="images/cassID-logo.svg" alt="cass ID logo"> </a>
         <input type="checkbox" id="menu-bar">
@@ -72,55 +83,54 @@ while ($category_row = mysqli_fetch_array($categories_results)) {
 
     <main>
         <section class="title grid-con">
-            <h1 class="col-span-full"><?php echo $row['name']; ?> <img class="title-star" src="images/cassID-star.svg" alt="logo star"></h1>
+            <h1 class="col-span-full"><?php echo htmlspecialchars($project_row['name']); ?> <img class="title-star" src="images/cassID-star.svg" alt="logo star"></h1>
             <div class="sorting-buttons-container title-buttons col-start-1 col-span-full m-col-start-1 m-col-span-6">
             <?php
-
-             foreach ($project_categories[$row['id']] as $category_name) {
-                echo '<div class="sorting-buttons"><p>' . $category_name . '</p></div>';
+                if (isset($project_categories[$project_row['id']])) {
+                    foreach ($project_categories[$project_row['id']] as $category_name) {
+                        echo '<div class="sorting-buttons"><p>' . htmlspecialchars($category_name) . '</p></div>';
+                    }
                 }
-                ?>
-             </div>
+            ?>
+            </div>
    
             <div class="project-base col-span-4 m-col-span-6">
-                <p><?php echo $row['company']; ?></p>
-                <p>Role: <?php echo $row['role']; ?></p>
+                <p><?php echo htmlspecialchars($project_row['company']); ?></p>
+                <p>Role: <?php echo htmlspecialchars($project_row['role']); ?></p>
             </div>
             <div class="project-base col-span-4 m-col-span-6">
-                <p>URL: <?php echo $row['url']; ?></p>
-                <p>Year: <?php echo $row['year']; ?></p>
+                <p>URL: <a href="<?php echo htmlspecialchars($project_row['url']); ?>" target="_blank"><?php echo htmlspecialchars($project_row['url']); ?></a></p>
+                <p>Year: <?php echo htmlspecialchars($project_row['year']); ?></p>
             </div>
         </section>
 
         <div class="full-width-grid-con secondary-background-fill">
             <div class="project-about grid-con">
                 <h1 class="col-span-full">About</h1>
-                <p class="col-span-full"><?php echo $row['description']; ?> </p>
+                <p class="col-span-full"><?php echo nl2br(htmlspecialchars($project_row['description'])); ?> </p>
 
-              
-                <img class="about-image col-span-2 m-col-span-6" src="images/<?php echo $mediaArray[0]; ?>" alt="Project Image">
-                <img class="about-image col-span-2 m-col-span-6" src="images/<?php echo $mediaArray[1]; ?>" alt="Project Image">
-            
+                <!-- Keep the original image formatting as requested -->
+                <img class="about-image col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[0]); ?>" alt="Project Image">
+                <img class="about-image col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[1]); ?>" alt="Project Image">
             </div>
         </div>
 
         <section class="full-width-grid-con feedback">
             <div class="grid-con">
                 <h1 class="col-span-full">Challenges & Feedback</h1>
-                <p class="col-span-full"><span>Feedback:</span><?php echo $row['feedback']; ?></p>
-                <p class="col-span-full"><span>Challenges:</span> <?php echo $row['challenges']; ?></p>
+                <p class="col-span-full"><span>Feedback:</span><?php echo nl2br(htmlspecialchars($project_row['feedback'])); ?></p>
+                <p class="col-span-full"><span>Challenges:</span> <?php echo nl2br(htmlspecialchars($project_row['challenges'])); ?></p>
             </div>
         </section>
 
         <section class="full-width-grid-con photo-gallery">
             <div class="grid-con">
-        
-                <img class="col-span-full" src="images/<?php echo $mediaArray[2]; ?>" alt="Project Image">
-            
-                <img class="col-span-2 m-col-span-6" src="images/<?php echo $mediaArray[3]; ?>" alt="Project Image">
-                <img class="col-span-2 m-col-span-6" src="images/<?php echo $mediaArray[4]; ?>" alt="Project Image">
-                <img class="col-span-2 m-col-span-6" src="images/<?php echo $mediaArray[5]; ?>" alt="Project Image">
-                <img class="col-span-2 m-col-span-6" src="images/<?php echo $mediaArray[6]; ?>" alt="Project Image">
+                <!-- Original image gallery format maintained -->
+                <img class="col-span-full" src="images/<?php echo htmlspecialchars($mediaArray[2]); ?>" alt="Project Image">
+                <img class="col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[3]); ?>" alt="Project Image">
+                <img class="col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[4]); ?>" alt="Project Image">
+                <img class="col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[5]); ?>" alt="Project Image">
+                <img class="col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[6]); ?>" alt="Project Image">
             </div>
         </section>
 
