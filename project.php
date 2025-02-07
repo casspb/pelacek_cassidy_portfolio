@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-require_once('includes/connect.php');  // Ensure this connects with PDO
+require_once('includes/connect.php');  
 
 // Fetch the project details using PDO
 $query = 'SELECT id, name, company, role, url, year, description, feedback, challenges, keywords FROM project WHERE id = :id';
@@ -13,24 +13,25 @@ $query_categories = 'SELECT project.id AS project_id, category.id AS category_id
 
 // Prepare and execute the query for project details
 $stmt = $connection->prepare($query);
-$stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT); // Bind the id parameter
+$stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT); 
 $stmt->execute();
-$project_row = $stmt->fetch(PDO::FETCH_ASSOC);  // Get the project details
-$stmt = null;  // Close the statement
+$project_row = $stmt->fetch(PDO::FETCH_ASSOC); 
+$stmt = null; 
 
-// Prepare and execute the query for categories related to the project
+
 $stmt = $connection->prepare($query_categories);
 $stmt->execute();
-$categories_results = $stmt->fetchAll(PDO::FETCH_ASSOC);  // Fetch all categories for the project
-$stmt = null;  // Close the statement
+$categories_results = $stmt->fetchAll(PDO::FETCH_ASSOC);  
+$stmt = null;  
+
 
 // Fetch all media related to this project
 $queryMedia = 'SELECT media FROM media WHERE project_id = :project_id ORDER BY id ASC';
 $stmt = $connection->prepare($queryMedia);
-$stmt->bindParam(':project_id', $_GET['id'], PDO::PARAM_INT);  // Bind the project id parameter
+$stmt->bindParam(':project_id', $_GET['id'], PDO::PARAM_INT);  
 $stmt->execute();
 $mediaResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$stmt = null;  // Close the statement
+$stmt = null; 
 
 // Store each media filename in an array
 $mediaArray = [];
@@ -38,7 +39,6 @@ foreach ($mediaResults as $mediaRow) {
     $mediaArray[] = $mediaRow['media'];  
 }
 
-// Create an associative array with project_id as key and category_name as value
 $project_categories = [];
 foreach ($categories_results as $category_row) {
     $project_categories[$category_row['project_id']][] = $category_row['category_name'];
@@ -56,8 +56,6 @@ foreach ($categories_results as $category_row) {
     <!-- External scripts with async (non-blocking) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" async></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/ScrollToPlugin.min.js" async></script>
-
-    <!-- Your custom scripts with defer (to ensure DOM is loaded first) -->
     <script src="js/scroll-animation.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,8 +106,6 @@ foreach ($categories_results as $category_row) {
             <div class="project-about grid-con">
                 <h1 class="col-span-full">About</h1>
                 <p class="col-span-full"><?php echo nl2br(htmlspecialchars($project_row['description'])); ?> </p>
-
-                <!-- Keep the original image formatting as requested -->
                 <img class="about-image col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[0]); ?>" alt="Project Image">
                 <img class="about-image col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[1]); ?>" alt="Project Image">
             </div>
@@ -125,7 +121,6 @@ foreach ($categories_results as $category_row) {
 
         <section class="full-width-grid-con photo-gallery">
             <div class="grid-con">
-                <!-- Original image gallery format maintained -->
                 <img class="col-span-full" src="images/<?php echo htmlspecialchars($mediaArray[2]); ?>" alt="Project Image">
                 <img class="col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[3]); ?>" alt="Project Image">
                 <img class="col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[4]); ?>" alt="Project Image">
