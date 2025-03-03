@@ -91,7 +91,7 @@ foreach ($categories_details_results as $category_row) {
     <main>
         <section class="header-image full-width-grid-con">
             <h1 class="hidden">header image</h1>
-            <model-viewer class="col-span-full" src="model/id-card.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" shadow-intensity="1" camera-orbit="180deg 86.07deg 696m" field-of-view="20.11deg">
+            <model-viewer class="col-span-full" src="model/id-card.gltf" disable-zoom  ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" shadow-intensity="1"   camera-orbit="180deg 86.07deg 1500m"  field-of-view="20.11deg">
                 <button class="Hotspot" slot="hotspot-1" data-position="149.9862980018935m 96.43430030990552m 0m" data-normal="0m 0m -1m" data-visibility-attribute="visible">
                     <div class="HotspotAnnotation"></div>
                 </button><button class="Hotspot" slot="hotspot-2" data-position="107.28834771936147m 0.07413567430472767m -2.0929025411605835m" data-normal="0m 0m -1m" data-visibility-attribute="visible">
