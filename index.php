@@ -38,7 +38,7 @@ $query_categories_details = 'SELECT project.id AS project_id, category.category 
 $stmt = $connection->prepare($query_categories_details);
 $stmt->execute();
 $categories_details_results = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-$stmt = null;  // Close statement
+$stmt = null; 
 
 
 foreach ($categories_details_results as $category_row) {
@@ -57,7 +57,7 @@ foreach ($categories_details_results as $category_row) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" async></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/ScrollToPlugin.min.js" async></script>
 
-    <!-- Your custom scripts with defer (to ensure DOM is loaded first) -->
+    <!-- defer -->
     <script src="js/background-stars.js" defer></script>
     <script src="js/id-card.js" defer></script>
     <script src="js/testimonial-carousel.js" defer></script>
@@ -113,7 +113,7 @@ foreach ($categories_details_results as $category_row) {
         <section id="section3" class="about-me-section col-span-full">
             <h1> Hello I'm Cassidy!</h1>
             <p>Welcome to my corner of creativity, and a place to dive into a new adventure- like finding that elusive ID card tucked away in the depths of your wallet! 
-                <br> Over the years, Ive been on a journey to discover my own identity, or as I like to call it, my “CassID.” Throughout this journey I've discovered my love for code, and Front-end development, and Back-end!</p>
+                Over the years, Ive been on a journey to discover my own identity, or as I like to call it, my “CassID.” I've discovered my love for code specifically back-end Development!</p>
         </section>
 
         <section class="project-video-section col-span-full">
@@ -141,7 +141,7 @@ foreach ($categories_details_results as $category_row) {
             <div class="sorting-buttons-container">
                 
                 <?php
-                    // Loop through categories to display them
+                    // category display
                     foreach ($categories_results as $category_row) {
                         echo '<div class="sorting-buttons" data-category="' . $category_row['category_name'] . '">
                                 <p>' . $category_row['category_name'] . '</p>
@@ -153,17 +153,19 @@ foreach ($categories_details_results as $category_row) {
     </div>
 
     <div class="grid-con">
+        <!--these are the stars -->
         <div class="container" id="container1"></div>
         <div class="container" id="container2"></div>
         <div class="container" id="container3"></div>
 
         <?php
-        // Loop through projects
+        //project display
         foreach ($projects_results as $row) {
             $project_id = $row['project_id'];
+            //checks if there is actual things in that project category 
             $category_names = isset($project_categories[$project_id]) ? $project_categories[$project_id] : [];
 
-            // Combine categories into a string to use as a data attribute
+            // Combine categories into a string
             $categories_string = implode(' ', $category_names);
             $stmt = null; 
 
@@ -194,7 +196,7 @@ foreach ($categories_details_results as $category_row) {
             <img class="toolkit-item" src="images/after-effects.svg" alt="After Effects">
             <img class="toolkit-item" src="images/photoshop.svg" alt="Photoshop">
             <img class="toolkit-item" src="images/lightroom.svg" alt="Lightroom">
-            <!-- Duplicate images for smooth looping -->
+            <!-- Duplicate images for smooth looping  need to add more tools later-->
             <img class="toolkit-item" src="images/illustrator.svg" alt="Illustrator">
             <img class="toolkit-item" src="images/after-effects.svg" alt="After Effects">
             <img class="toolkit-item" src="images/photoshop.svg" alt="Photoshop">
@@ -208,8 +210,8 @@ foreach ($categories_details_results as $category_row) {
 
 <footer>
     <div id="section4" class="thank-you">
-        <h1 class="col-span-full">THANK YOU</h1>
-        <h2 class="col-span-full">TESTIMONIAL</h2>
+        <h1 class="col-span-full">TESTIMONIALS</h1>
+        <h2 class="col-span-full">Thank you for your support</h2>
     </div>
     <div class="testimonial-section">
         <h1 class="hidden">Testimonies</h1>
