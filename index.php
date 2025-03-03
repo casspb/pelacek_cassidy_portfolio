@@ -5,7 +5,7 @@
 require_once('includes/connect.php');  
 
 // Fetch data for projects, testimonials, and categories
-$query_projects = 'SELECT id AS project_id, name, year FROM project';
+$query_projects = 'SELECT id AS project_id, name, year, mainImage FROM project';
 $query_testimonials = 'SELECT id AS testimonial_id, name, job, testimonial FROM testimonials';
 $query_categories = 'SELECT DISTINCT category.category AS category_name 
                      FROM category';
@@ -163,19 +163,11 @@ foreach ($categories_details_results as $category_row) {
 
             // Combine categories into a string to use as a data attribute
             $categories_string = implode(' ', $category_names);
-
-            // Fetch the first image for this project (replacing mysqli with PDO)
-            $first_image_query = 'SELECT media FROM media WHERE project_id = :project_id LIMIT 1';
-            $stmt = $connection->prepare($first_image_query);
-            $stmt->bindParam(':project_id', $project_id, PDO::PARAM_INT);
-            $stmt->execute();
-            $first_image = $stmt->fetch(PDO::FETCH_ASSOC);
-            $image_src = $first_image ? 'images/' . $first_image['media'] : 'images/placeholder.jpg'; // Use a default image if no media
-            $stmt = null; // Close the statement
+            $stmt = null; 
 
             echo '
                 <div class="project-card col-span-4 m-col-span-6 l-col-span-6" data-categories="' . $categories_string . '">
-                    <img src="' . $image_src . '" alt="Project Image" class="project-image">
+                    <img src="images/' . $row['mainImage'] . '" alt="Project Image" class="project-image">
                     <div class="content-overlay">
                         <h2>' . $row['name'] . '</h2>
                         <p>Check out this project - ' . $row['year'] . '</p>
