@@ -28,10 +28,22 @@
 
 }
 
-.about-image{
-  margin: 2em 0;
+.main-image-box {
+    width: 100%;
+    height: 300px;
+    overflow: hidden; 
+    margin: 2em 0;
     border-radius: 25px;
 }
+
+.about-image {
+  
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    display: block;
+}
+
 
 .project-about{
     background-color: a.$accent-color;
@@ -92,7 +104,7 @@
 }
 
 .toolkit{
-    margin-bottom: 8em;
+    margin-bottom: 2em;
 
     h1{
         text-align: center;
@@ -103,6 +115,49 @@
         padding: 5px;
     }
     
+}
+
+.toolkit-slider {
+    overflow: hidden; 
+    white-space: nowrap; 
+    position: relative;
+    width: 100%; 
+}
+
+.toolkit-track {
+    display: flex; 
+    gap: 30px; 
+    animation: scrollGallery 20s linear infinite; 
+}
+
+.toolkit-item {
+    width: 120px; 
+    height: auto; 
+    flex-shrink: 0; 
+}
+
+@keyframes scrollGallery {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } 
+}
+
+//image on project page flex 
+
+.photo-gallery-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    justify-content: center; 
+    align-items: flex-start; 
+}
+
+.photo-item {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-grow: 1; 
+    width: auto; 
+    max-height: 350px; 
 }
 
 
@@ -128,3 +183,4 @@
         margin-top: 14em;
      }
 }
+
