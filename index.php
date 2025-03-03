@@ -63,6 +63,7 @@ foreach ($categories_details_results as $category_row) {
     <script src="js/testimonial-carousel.js" defer></script>
     <script src="js/scroll-animation.js" defer></script>
     <script src="js/sorting.js" defer></script>
+    <script src="js/toolkit.js" defer></script>
 
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
@@ -91,7 +92,7 @@ foreach ($categories_details_results as $category_row) {
     <main>
         <section class="header-image full-width-grid-con">
             <h1 class="hidden">header image</h1>
-            <model-viewer class="col-span-full" src="model/id-card.gltf" disable-zoom  ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" shadow-intensity="1"   camera-orbit="180deg 86.07deg 1500m"  field-of-view="20.11deg">
+            <model-viewer class="col-span-full" src="model/id-card.gltf" disable-zoom  ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" shadow-intensity="1"  camera-orbit="180deg 86.07deg 1500m"  field-of-view="10.11deg">
                 <button class="Hotspot" slot="hotspot-1" data-position="149.9862980018935m 96.43430030990552m 0m" data-normal="0m 0m -1m" data-visibility-attribute="visible">
                     <div class="HotspotAnnotation"></div>
                 </button><button class="Hotspot" slot="hotspot-2" data-position="107.28834771936147m 0.07413567430472767m -2.0929025411605835m" data-normal="0m 0m -1m" data-visibility-attribute="visible">
@@ -106,7 +107,7 @@ foreach ($categories_details_results as $category_row) {
             
         
               </model-viewer> 
-            <img src="images/cassID-card.svg" alt="placeholder for ID card" class="id-card col-span-full">
+
         </section>
 
         <section id="section3" class="about-me-section col-span-full">
@@ -138,6 +139,7 @@ foreach ($categories_details_results as $category_row) {
         <div class="col-span-full">
             <h1 class="col-span-full">Works</h1>
             <div class="sorting-buttons-container">
+                
                 <?php
                     // Loop through categories to display them
                     foreach ($categories_results as $category_row) {
@@ -184,7 +186,25 @@ foreach ($categories_details_results as $category_row) {
         }
         ?>
     </div>
+    <section class="toolkit col-span-full">
+    <h1 class="col-span-full">Toolkit</h1>
+    <div class="toolkit-slider">
+        <div class="toolkit-track">
+            <img class="toolkit-item" src="images/illustrator.svg" alt="Illustrator">
+            <img class="toolkit-item" src="images/after-effects.svg" alt="After Effects">
+            <img class="toolkit-item" src="images/photoshop.svg" alt="Photoshop">
+            <img class="toolkit-item" src="images/lightroom.svg" alt="Lightroom">
+            <!-- Duplicate images for smooth looping -->
+            <img class="toolkit-item" src="images/illustrator.svg" alt="Illustrator">
+            <img class="toolkit-item" src="images/after-effects.svg" alt="After Effects">
+            <img class="toolkit-item" src="images/photoshop.svg" alt="Photoshop">
+            <img class="toolkit-item" src="images/lightroom.svg" alt="Lightroom">
+        </div>
+    </div>
+</section>
 </div>
+      
+    </main>
 
 <footer>
     <div id="section4" class="thank-you">
@@ -229,19 +249,19 @@ foreach ($categories_details_results as $category_row) {
         <h1>CONTACT</h1>
         <h2>TIME TO REACH OUT?</h2>
         <form action="send_mail.php" method="POST" class="contact-form grid-con">
-            <div class="col-span-full l-col-start-2 l-col-end-7">
+            <div class="col-span-full m-col-start-2 m-col-end-7">
                 <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
             </div>
-            <div class="col-span-full l-col-start-7 l-col-end-12">
+            <div class="col-span-full m-col-start-7 m-col-end-12">
                 <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
             </div>
-            <div class="col-span-full l-col-start-2 l-col-end-12">
+            <div class="col-span-full m-col-start-2 m-col-end-12">
                 <input type="email" id="email" name="email" placeholder="sayhello@gmail.com" required>
             </div>
-            <div class="col-span-full l-col-start-2 l-col-end-12">
+            <div class="col-span-full m-col-start-2 m-col-end-12">
                 <textarea id="message" name="message" placeholder="Let's talk about the piece of ID you're missing!" rows="4" required></textarea>
             </div>
-            <div class="col-start-3 col-span-2 m-col-start-10 m-col-span-3 l-col-start-10 l-col-end-12">
+            <div class="col-start-3 col-span-2  m-col-start-10 m-col-end-12">
                 <button type="submit">SEND</button>
             </div>
         </form>

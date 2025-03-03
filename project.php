@@ -6,7 +6,7 @@ require_once('includes/connect.php');
 
 // Fetch the project details using PDO
 $query = 'SELECT id, name, company, role, url, year, description, feedback, challenges, keywords FROM project WHERE id = :id';
-$query_categories = 'SELECT project.id AS project_id, category.id AS category_id, category.category AS category_name
+$query_categories = 'SELECT project.id AS project_id, category.id AS category_id, category.category AS category_name, MainImage
                      FROM project
                      JOIN project_category ON project.id = project_category.project_id
                      JOIN category ON category.id = project_category.category_id';
@@ -44,6 +44,13 @@ foreach ($categories_results as $category_row) {
     $project_categories[$category_row['project_id']][] = $category_row['category_name'];
 }
 
+$mainImage = '';
+foreach ($categories_results as $category_row) {
+    if ($category_row['project_id'] == $_GET['id']) {
+        $mainImage = $category_row['MainImage'];
+    }
+}
+
 ?>
 
 <head>
@@ -57,6 +64,7 @@ foreach ($categories_results as $category_row) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" async></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/ScrollToPlugin.min.js" async></script>
     <script src="js/scroll-animation.js" defer></script>
+    <script src="js/lightbox.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,8 +114,9 @@ foreach ($categories_results as $category_row) {
             <div class="project-about grid-con">
                 <h1 class="col-span-full">About</h1>
                 <p class="col-span-full"><?php echo nl2br(htmlspecialchars($project_row['description'])); ?> </p>
-                <img class="about-image col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[0]); ?>" alt="Project Image">
-                <img class="about-image col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[1]); ?>" alt="Project Image">
+               <div class="main-image-box col-span-full">
+                <img class="about-image " src="images/<?php echo htmlspecialchars($mainImage); ?>" alt="Project Image">
+            </div>
             </div>
         </div>
 
@@ -120,46 +129,44 @@ foreach ($categories_results as $category_row) {
         </section>
 
         <section class="full-width-grid-con photo-gallery">
-            <div class="grid-con">
-                <img class="col-span-full" src="images/<?php echo htmlspecialchars($mediaArray[2]); ?>" alt="Project Image">
-                <img class="col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[3]); ?>" alt="Project Image">
-                <img class="col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[4]); ?>" alt="Project Image">
-                <img class="col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[5]); ?>" alt="Project Image">
-                <img class="col-span-2 m-col-span-6" src="images/<?php echo htmlspecialchars($mediaArray[6]); ?>" alt="Project Image">
-            </div>
-        </section>
+    <div class="grid-con photo-gallery-flex">
+        <?php foreach ($mediaArray as $media): ?>
+            <img class="photo-item" src="images/<?php echo htmlspecialchars($media); ?>" alt="Project Image" >
+        <?php endforeach; ?>
+    </div>
+</section>
 
-        <section class="toolkit grid-con">
-            <h1 class="col-span-full">Toolkit</h1>
-            <img class="col-span-1 m-col-start-3 m-col-span-2" src="images/illustrator.svg" alt="illustrator logo">
-            <img class="col-span-1 m-col-span-2 " src="images/after-effects.svg" alt="after-effects logo">
-            <img class="col-span-1 m-col-span-2 " src="images/photoshop.svg" alt="photoshop logo">
-            <img class="col-span-1 m-col-span-2" src="images/lightroom.svg" alt="lightroom logo">
-        </section>
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" >
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Expanded Image">
+</div>
+
+
+
+    
     </main>
 
     <footer>
         <section class="contact" id="section1">
-            <h1>CONTACT</h1>
-            <h2>TIME TO REACH OUT?</h2>
-        
-            <form action="send_mail.php" method="POST" class="contact-form grid-con">
-                <div class="col-span-full l-col-start-2 l-col-end-7">
-                    <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
-                </div>
-                <div class="col-span-full l-col-start-7 l-col-end-12">
-                    <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
-                </div>
-                <div class="col-span-full l-col-start-2 l-col-end-12 ">
-                    <input type="email" id="email" name="email" placeholder="sayhello@gmail.com" required>
-                </div>
-                <div class="col-span-full l-col-start-2 l-col-end-12 ">
-                    <textarea id="message" name="message" placeholder="lets talk about the piece of ID you are missing!" rows="4" required></textarea>
-                </div>
-                <div class="col-start-3 col-span-2 m-col-start-10 m-col-span-3 l-col-start-10 l-col-end-12">
-                    <button type="submit">SEND</button>
-                </div>
-            </form>
+        <h1>CONTACT</h1>
+        <h2>TIME TO REACH OUT?</h2>
+        <form action="send_mail.php" method="POST" class="contact-form grid-con">
+            <div class="col-span-full m-col-start-2 m-col-end-7">
+                <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+            </div>
+            <div class="col-span-full m-col-start-7 m-col-end-12">
+                <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+            </div>
+            <div class="col-span-full m-col-start-2 m-col-end-12">
+                <input type="email" id="email" name="email" placeholder="sayhello@gmail.com" required>
+            </div>
+            <div class="col-span-full m-col-start-2 m-col-end-12">
+                <textarea id="message" name="message" placeholder="Let's talk about the piece of ID you're missing!" rows="4" required></textarea>
+            </div>
+            <div class="col-start-3 col-span-2  m-col-start-10 m-col-end-12">
+                <button type="submit">SEND</button>
+            </div>
+        </form>
         </section>
 
         <div class="bottom-footer">
