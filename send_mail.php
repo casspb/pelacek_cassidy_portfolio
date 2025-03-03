@@ -1,11 +1,13 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
 
 // Connecting to the database using PDO
 require_once('includes/connect.php');
 
 // Gather elements from the submitted form
-$first = $_POST['first-name'];
-$last = $_POST['last-name'];
+$first = $_POST['fname'];
+$last = $_POST['lname'];
 $email = $_POST['email'];
 $message = $_POST['message'];
 
@@ -36,44 +38,28 @@ if (empty($email)) {
     $errors['legit_email'] = 'You must provide a REAL email';
 }
 
-if (empty($errors)) {
-    // Use PDO to prepare the statement and bind parameters to avoid SQL injection
-    try {
-        $stmt = $connection->prepare("INSERT INTO contact (first, last, email, message) VALUES (:first, :last, :email, :message)");
-
-        // Bind the form data to the prepared statement
-        $stmt->bindParam(':first', $first, PDO::PARAM_STR);
-        $stmt->bindParam(':last', $last, PDO::PARAM_STR);
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':message', $message, PDO::PARAM_STR);
-
-        // Execute the statement
-        if ($stmt->execute()) {
-            // Send email to myself
-            $email_message = "You have received a new contact form submission:\n\n";
-            $email_message .= "Name: ".$first." ".$last."\n";
-            $email_message .= "Email: ".$email."\n\n";
-            
-            $to = 'cassidypelacek@gmail.com';
-            $subject = 'Message from your Portfolio site!';
-            
-            mail($to, $subject, $email_message);
-
-            // Redirect to the index page
-            header('Location: sent-message.html');
-            exit;
-        } else {
-             echo "There was an error submitting the form.";
-        }
-        //catch for PDO errors as well, since I have a lot of issues with it AHHH
-    } catch (PDOException $e) {
-      
-        echo "Error: " . $e->getMessage();
+$errcount = count($errors);
+if ($errcount > 0) {
+    $errmsg = array();
+    for ($i = 0; $i < $errcount; $i++) {
+        $errmsg[] = $errors[$i];
     }
+    echo json_encode(["errors" => $errors]);
 } else {
-    foreach ($errors as $error) {
-        echo $error . '<br>';
-    }
+   // try {
+        // Securely insert into database using prepared statements
+        $querystring = $connection->prepare("INSERT INTO contact (id, first, last, email, message) VALUES (NULL, '" . $lname . "','" . $fname . "','" . $message . "','" . $email . "')";
+        // // Bind the correct form values
+        // $stmt->bindParam(':first', $first, PDO::PARAM_STR);
+        // $stmt->bindParam(':last', $last, PDO::PARAM_STR);
+        // $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        // $stmt->bindParam(':message', $message, PDO::PARAM_STR);
+
+        $qpartner = mysqli_query($connection, $querystring);
+        echo json_encode(array("message" => "Form submitted. Thank you for your interest!"));
+   
+    // } catch (PDOException $e) {
+    //     echo json_encode(["errors" => ["Database error: " . $e->getMessage()]]);
+    // }
 }
 ?>
-

@@ -147,27 +147,32 @@ foreach ($categories_results as $category_row) {
     </main>
 
     <footer>
-        <section class="contact" id="section1">
-        <h1>CONTACT</h1>
-        <h2>TIME TO REACH OUT?</h2>
-        <form action="send_mail.php" method="POST" class="contact-form grid-con">
-            <div class="col-span-full m-col-start-2 m-col-end-7">
-                <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
-            </div>
-            <div class="col-span-full m-col-start-7 m-col-end-12">
-                <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
-            </div>
-            <div class="col-span-full m-col-start-2 m-col-end-12">
-                <input type="email" id="email" name="email" placeholder="sayhello@gmail.com" required>
-            </div>
-            <div class="col-span-full m-col-start-2 m-col-end-12">
-                <textarea id="message" name="message" placeholder="Let's talk about the piece of ID you're missing!" rows="4" required></textarea>
-            </div>
-            <div class="col-start-3 col-span-2  m-col-start-10 m-col-end-12">
-                <button type="submit">SEND</button>
-            </div>
-        </form>
-        </section>
+    <section class="contact" id="section1">
+    <h1>CONTACT</h1>
+    <h2>TIME TO REACH OUT?</h2>
+    <form id="contactForm" class="contact-form grid-con">
+        <div class="col-span-full m-col-start-2 m-col-end-7">
+            
+            <input type="text" id="fname" name="fname" placeholder="First Name" required>
+        </div>
+        <div class="col-span-full m-col-start-7 m-col-end-12">
+           
+            <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+        </div>
+        <div class="col-span-full m-col-start-2 m-col-end-12">
+          
+            <input type="email" id="email" name="email" placeholder="sayhello@gmail.com" required>
+        </div>
+        <div class="col-span-full m-col-start-2 m-col-end-12">
+            <textarea id="message" name="message" placeholder="Let's talk about the piece of ID you're missing!" rows="4" required></textarea>
+        </div>
+        <div class="col-start-3 col-span-2 m-col-start-10 m-col-end-12">
+        <input id="submit" type="submit" value="SEND">
+        </div>
+    </form>
+    <div class="feedback">*Please fill out all required sections</div>
+</section>
+
 
         <div class="bottom-footer">
             <p>wow! made it all the way here! <br> might as well check out a bit more!</p>
