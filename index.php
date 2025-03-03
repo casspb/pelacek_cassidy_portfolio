@@ -64,7 +64,8 @@ foreach ($categories_details_results as $category_row) {
     <script src="js/scroll-animation.js" defer></script>
     <script src="js/sorting.js" defer></script>
     <script src="js/toolkit.js" defer></script>
-
+    <script src="js/main.js" defer></script>
+    <script src="js/contact.js" defer></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -250,7 +251,7 @@ foreach ($categories_details_results as $category_row) {
   <section class="contact" id="section1">
     <h1>CONTACT</h1>
     <h2>TIME TO REACH OUT?</h2>
-    <form id="contactForm" class="contact-form grid-con">
+    <form id="contact-form" class="contact-form grid-con">
         <div class="col-span-full m-col-start-2 m-col-end-7">
             
             <input type="text" id="fname" name="fname" placeholder="First Name" required>
@@ -264,12 +265,12 @@ foreach ($categories_details_results as $category_row) {
             <input type="email" id="email" name="email" placeholder="sayhello@gmail.com" required>
         </div>
         <div class="col-span-full m-col-start-2 m-col-end-12">
-            <textarea id="message" name="message" placeholder="Let's talk about the piece of ID you're missing!" rows="4" required></textarea>
+            <textarea id="message" name="message" placeholder="Let's talk about the piece of ID you're missing!" rows="4"></textarea>
         </div>
         <div class="col-start-3 col-span-2 m-col-start-10 m-col-end-12">
         <input id="submit" type="submit" value="SEND">
         </div>
-        <div class="feedback ccol-span-full m-col-start-2 m-col-end-7">*Please fill out all required sections</div>
+        <div id="feedback" class="col-span-full m-col-start-2 m-col-end-7">*Please fill out all required sections</div>
     </form>
 
 </section>
@@ -286,7 +287,5 @@ foreach ($categories_details_results as $category_row) {
         </ul>
     </div>
 </footer>
-<script src="js/main.js" defer></script>
-<script src="js/contact.js" defer></script>
 </body>
 </html>

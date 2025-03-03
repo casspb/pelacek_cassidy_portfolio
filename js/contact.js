@@ -1,14 +1,17 @@
 (() => {
-    const form = document.querySelector('.contact-form');
-    const feedBack = document.querySelector('.feedback');
-    
+    const form = document.querySelector('#contact-form');
+    const feedBack = document.querySelector('#feedback');
+
     function regForm(event){
         event.preventDefault(); 
+        console.log("is this working");
 
         const thisform = event.currentTarget;
         const url = "send_mail.php";
-        const formdata = `lname=${thisform.elements.lname.value}&fname=${thisform.elements.fname.value}&email=${thisform.elements.email.value}&message=${thisform.elements.message.value}`;
-        
+        const formdata = `lname=${thisform.querySelector('#lname').value}&fname=${thisform.querySelector('#fname').value}&email=${thisform.querySelector('#email').value}&message=${thisform.querySelector('#message').value}`;
+
+        console.log(formdata); 
+
         fetch(url, {
             method: "POST",
             headers: {
@@ -18,35 +21,33 @@
         })
         .then(response => response.json())
         .then(response => {
-            console.log(response);
-            feedBack.innerHTML = "";
+            console.log(response); // Debugging - Check what response is returned
+            feedBack.innerHTML = ""; // Clear previous feedback
+
             if(response.errors) {
                 response.errors.forEach(error => {
                     const errorElement = document.createElement("p");
                     errorElement.textContent = error;
                     feedBack.appendChild(errorElement);
-                })
+                });
 
-            }
-
-            else {
+            } else {
                 form.reset();
                 const messageElement = document.createElement("p");
                 messageElement.textContent = response.message;
                 feedBack.appendChild(messageElement);
             }
-          
-            feedBack.scrollIntoView({behavior: 'smooth', block: 'end'})
+
+            feedBack.scrollIntoView({behavior: 'smooth', block: 'end'});
         }) 
         .catch(error => {
             console.log(error);
             const errorMessage = document.createElement("p");
-            errorMessage.textcontent = "oopsie not working cause of a browser or internet issue";
+            errorMessage.textContent = "Oopsie, something went wrong. Please try again later.";
             feedBack.appendChild(errorMessage);
         });
     }
 
     form.addEventListener("submit", regForm);
 
-	
 })();
