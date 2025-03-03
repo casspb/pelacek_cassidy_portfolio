@@ -86,7 +86,7 @@ footer{
                 color: #aaa; 
             }
         }
-
+    }
         
         input::placeholder,
         textarea::placeholder {
@@ -94,33 +94,34 @@ footer{
            color: a.$accent-color;
         }
 
-        button {
-            font-weight: bolder;
-            padding: 10px;
-            background-color: a.$base-colour; 
-            color: a.$primary-color;
-            border: none;
-            border-radius: 15px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%; 
-
-            &:hover {
-                background-color: a.$secondary-color;
-                color: a.$base-colour; 
-            }
-        }
+       
+    
     }
 
-    .success-message {
+    #submit{
+        font-weight: bolder;
+        padding: 10px;
+        background-color: a.$base-colour; 
+        color: a.$primary-color;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%; 
+
+        &:hover {
+            background-color: a.$secondary-color;
+            color: a.$base-colour; 
+        }
+
+    .feedback {
         text-align: center;
         margin-top: 20px;
-        display: none;
     }
 }
 
 @media(min-width:786px){
-    #first-name, #last-name, #email{
+    #fname, #lname, #email{
         height: 55px;
         font-size: 24px;
         font-family: a.$primary-font-family;
