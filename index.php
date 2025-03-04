@@ -66,6 +66,9 @@ foreach ($categories_details_results as $category_row) {
     <script src="js/toolkit.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/contact.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" async></script>
+    <script src="js/scroll-trigger.js" defer></script>
+
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -111,13 +114,13 @@ foreach ($categories_details_results as $category_row) {
 
         </section>
 
-        <section id="section3" class="about-me-section col-span-full">
+        <section id="section3" class="about-me-section full-width-grid-con">
             <h1> Hello I'm Cassidy!</h1>
-            <p>Welcome to my corner of creativity, and a place to dive into a new adventure- like finding that elusive ID card tucked away in the depths of your wallet! 
+            <p class="scroll-fade">Welcome to my corner of creativity, and a place to dive into a new adventure- like finding that elusive ID card tucked away in the depths of your wallet! 
                 Over the years, Ive been on a journey to discover my own identity, or as I like to call it, my “CassID.” I've discovered my love for code specifically back-end Development!</p>
         </section>
 
-        <section class="project-video-section col-span-full">
+        <section class="project-video-section scroll-fade full-width-grid-con">
             <h1 class="hidden">Project Roundup Video</h1>
             <div id="player-container">
                 <video preload="metadata" poster="images/scrapbook-cover-collage.png">
@@ -171,7 +174,7 @@ foreach ($categories_details_results as $category_row) {
             $stmt = null; 
 
             echo '
-                <div class="project-card col-span-4 m-col-span-6 l-col-span-6" data-categories="' . $categories_string . '">
+                <div class="project-card scroll-fade col-span-4 m-col-span-6 l-col-span-6" data-categories="' . $categories_string . '">
                     <img src="images/' . $row['mainImage'] . '" alt="Project Image" class="project-image">
                     <div class="content-overlay">
                         <h2>' . $row['name'] . '</h2>
@@ -255,15 +258,15 @@ foreach ($categories_details_results as $category_row) {
     <form id="contact-form" class="contact-form grid-con">
         <div class="col-span-full m-col-start-2 m-col-end-7">
             
-            <input type="text" id="fname" name="fname" placeholder="First Name" required>
+            <input type="text" id="fname" name="fname" placeholder="First Name" >
         </div>
         <div class="col-span-full m-col-start-7 m-col-end-12">
            
-            <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+            <input type="text" id="lname" name="lname" placeholder="Last Name" >
         </div>
         <div class="col-span-full m-col-start-2 m-col-end-12">
           
-            <input type="email" id="email" name="email" placeholder="sayhello@gmail.com" required>
+            <input type="email" id="email" name="email" placeholder="sayhello@gmail.com" >
         </div>
         <div class="col-span-full m-col-start-2 m-col-end-12">
             <textarea id="message" name="message" placeholder="Let's talk about the piece of ID you're missing!" rows="4"></textarea>
@@ -271,22 +274,22 @@ foreach ($categories_details_results as $category_row) {
         <div class="col-start-3 col-span-2 m-col-start-10 m-col-end-12">
         <input id="submit" type="submit" value="SEND">
         </div>
-        <div id="feedback" class="col-span-full m-col-start-3 m-col-end-6"></div>
+        <div id="feedback" class="col-span-full m-col-start-2 m-col-end-12"></div>
     </form>
 
 </section>
 
 
 
-    <div class="bottom-footer">
-        <p>wow! made it all the way here! <br> might as well check out a bit more!</p>
-        <ul class="footer-svg">
-            <li> <a href=""><img src="images/instagram-svgrepo-com (1).svg" alt="instagram logo"></a></li>
-            <li> <a href=""><img src="images/linkedin-161-svgrepo-com.svg" alt="linkedin logo"></a></li>
-            <li> <a href=""><img src="images/github-svgrepo-com.svg" alt="github logo"></a></li>
-            <li>  <a href=""><img src="images/spotify-162-svgrepo-com.svg" alt="spotify logo"></a></li>
-        </ul>
-    </div>
+<div class="bottom-footer">
+            <p>wow! made it all the way here! <br> might as well check out a bit more!</p>
+            <ul class="footer-svg">
+                <li> <a href=""><img src="images/instagram-svgrepo-com (1).svg" class="icon" alt="instagram logo"></a></li>
+                <li> <a href="https://www.linkedin.com/in/cassidypelacek/"><img src="images/linkedin-161-svgrepo-com.svg" class="icon" alt="linkedin logo"></a></li>
+                <li> <a href="https://github.com/casspb"><img src="images/github-svgrepo-com.svg" class="icon" alt="github logo"></a></li>
+                <li>  <a href=""><img src="images/spotify-162-svgrepo-com.svg" class="icon" alt="spotify logo"></a></li>
+            </ul>
+        </div>
 </footer>
 </body>
 </html>

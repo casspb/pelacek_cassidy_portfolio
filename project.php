@@ -63,8 +63,10 @@ foreach ($categories_results as $category_row) {
     <!-- External scripts with async (non-blocking) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" async></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/ScrollToPlugin.min.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" async></script>
     <script src="js/scroll-animation.js" defer></script>
     <script src="js/lightbox.js" defer></script>
+    <script src="js/scroll-trigger.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,7 +115,7 @@ foreach ($categories_results as $category_row) {
         <div class="full-width-grid-con secondary-background-fill">
             <div class="project-about grid-con">
                 <h1 class="col-span-full">About</h1>
-                <p class="col-span-full"><?php echo nl2br(htmlspecialchars($project_row['description'])); ?> </p>
+                <p class="col-span-full scroll-fade"><?php echo nl2br(htmlspecialchars($project_row['description'])); ?> </p>
                <div class="main-image-box col-span-full">
                 <img class="about-image " src="images/<?php echo htmlspecialchars($mainImage); ?>" alt="Project Image">
             </div>
@@ -123,8 +125,8 @@ foreach ($categories_results as $category_row) {
         <section class="full-width-grid-con feedback">
             <div class="grid-con">
                 <h1 class="col-span-full">Challenges & Feedback</h1>
-                <p class="col-span-full"><span>Feedback:</span><?php echo nl2br(htmlspecialchars($project_row['feedback'])); ?></p>
-                <p class="col-span-full"><span>Challenges:</span> <?php echo nl2br(htmlspecialchars($project_row['challenges'])); ?></p>
+                <p class="col-span-full  scroll-fade"><span>Feedback:</span><?php echo nl2br(htmlspecialchars($project_row['feedback'])); ?></p>
+                <p class="col-span-full  scroll-fade"><span>Challenges:</span> <?php echo nl2br(htmlspecialchars($project_row['challenges'])); ?></p>
             </div>
         </section>
 
@@ -150,7 +152,7 @@ foreach ($categories_results as $category_row) {
     <section class="contact" id="section1">
     <h1>CONTACT</h1>
     <h2>TIME TO REACH OUT?</h2>
-    <form id="contactForm" class="contact-form grid-con">
+    <form id="contact-form" class="contact-form grid-con">
         <div class="col-span-full m-col-start-2 m-col-end-7">
             
             <input type="text" id="fname" name="fname" placeholder="First Name" required>
@@ -164,22 +166,22 @@ foreach ($categories_results as $category_row) {
             <input type="email" id="email" name="email" placeholder="sayhello@gmail.com" required>
         </div>
         <div class="col-span-full m-col-start-2 m-col-end-12">
-            <textarea id="message" name="message" placeholder="Let's talk about the piece of ID you're missing!" rows="4" required></textarea>
+            <textarea id="message" name="message" placeholder="Let's talk about the piece of ID you're missing!" rows="4"></textarea>
         </div>
         <div class="col-start-3 col-span-2 m-col-start-10 m-col-end-12">
         <input id="submit" type="submit" value="SEND">
         </div>
+        <div id="feedback" class="col-span-full m-col-start-3 m-col-end-6"></div>
     </form>
-    <div class="feedback">*Please fill out all required sections</div>
-</section>
 
+</section>
 
         <div class="bottom-footer">
             <p>wow! made it all the way here! <br> might as well check out a bit more!</p>
             <ul class="footer-svg">
                 <li> <a href=""><img src="images/instagram-svgrepo-com (1).svg" alt="instagram logo"></a></li>
-                <li> <a href=""><img src="images/linkedin-161-svgrepo-com.svg" alt="linkedin logo"></a></li>
-                <li> <a href=""><img src="images/github-svgrepo-com.svg" alt="github logo"></a></li>
+                <li> <a href="https://www.linkedin.com/in/cassidypelacek/"><img src="images/linkedin-161-svgrepo-com.svg" alt="linkedin logo"></a></li>
+                <li> <a href="https://github.com/casspb"><img src="images/github-svgrepo-com.svg" alt="github logo"></a></li>
                 <li>  <a href=""><img src="images/spotify-162-svgrepo-com.svg" alt="spotify logo"></a></li>
             </ul>
         </div>
