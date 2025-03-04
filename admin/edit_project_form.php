@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 require_once('../includes/connect.php');
-$query = 'SELECT * FROM projects WHERE projects.id = :projectId';
+$query = 'SELECT * FROM project WHERE project.id = :projectId';
 $stmt = $connection->prepare($query);
 $projectId = $_GET['id'];
 $stmt->bindParam(':projectId', $projectId, PDO::PARAM_INT);
@@ -23,11 +23,17 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 <form action="edit_project.php" method="POST">
 <input name="pk" type="hidden" value="<?php echo $row['id']; ?>">
     <label for="title">project title: </label>
-    <input name="title" type="text" value="<?php echo $row['title']; ?>" required><br><br>
+    <input name="title" type="text" value="<?php echo $row['name']; ?>" required><br><br>
     <label for="thumb">project thumbnail: </label>
-    <input name="thumb" type="text" required value="<?php echo $row['image_url']; ?>"><br><br>
+    <input name="thumb" type="text" required value="<?php echo $row['mainImage']; ?>"><br><br>
     <label for="desc">project description: </label>
     <textarea name="desc" required><?php echo $row['description']; ?></textarea><br><br>
+    <input name="submit" type="submit" value="Edit">
+    <label for="desc">project description: </label>
+    <textarea name="desc" required><?php echo $row['feedback']; ?></textarea><br><br>
+    <input name="submit" type="submit" value="Edit">
+    <label for="desc">project description: </label>
+    <textarea name="desc" required><?php echo $row['challenges']; ?></textarea><br><br>
     <input name="submit" type="submit" value="Edit">
 </form>
 <?php
