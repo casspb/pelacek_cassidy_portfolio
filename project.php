@@ -92,11 +92,11 @@ foreach ($categories_results as $category_row) {
     <main>
         <section class="title grid-con">
             <h1 class="col-span-full"><?php echo htmlspecialchars($project_row['name']); ?> <img class="title-star" src="images/cassID-star.svg" alt="logo star"></h1>
-            <div class="sorting-buttons-container title-buttons col-start-1 col-span-full m-col-start-1 m-col-span-6">
+            <div class="project-type col-start-1 col-span-full m-col-start-1 m-col-span-6">
             <?php
                 if (isset($project_categories[$project_row['id']])) {
                     foreach ($project_categories[$project_row['id']] as $category_name) {
-                        echo '<div class="sorting-buttons"><p>' . htmlspecialchars($category_name) . '</p></div>';
+                        echo '<div class="sorting-buttons"><p>Project Type: ' . htmlspecialchars($category_name) . '</p></div>';
                     }
                 }
             ?>
