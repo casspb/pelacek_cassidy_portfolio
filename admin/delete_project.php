@@ -1,6 +1,6 @@
 <?php
 require_once('../includes/connect.php');
-$query = 'DELETE FROM projects WHERE projects.id = :projectId';
+$query = 'DELETE FROM project WHERE project.id = :projectId';
 $stmt = $connection->prepare($query);
 $projectId = $_GET['id'];
 $stmt->bindParam(':projectId', $projectId, PDO::PARAM_INT);

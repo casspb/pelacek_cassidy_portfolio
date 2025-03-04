@@ -4,7 +4,7 @@
 <?php
 
 require_once('../includes/connect.php');
-$stmt = $connection->prepare('SELECT id,title FROM projects ORDER BY title ASC');
+$stmt = $connection->prepare('SELECT id,name FROM project ORDER BY title ASC');
 $stmt->execute();
 ?>
 
