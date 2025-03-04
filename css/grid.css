@@ -63,8 +63,8 @@ img, embed, object, video, picture {
     grid-column-gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
  }
 
  .col-span-1	{grid-column: span 1 / span 1;}
@@ -91,8 +91,8 @@ img, embed, object, video, picture {
        display: grid; 
        grid-template-columns: repeat(12, minmax(0, 1fr));
        grid-column-gap: 16px;
-       padding-left: 32px;
-       padding-right: 32px;
+       padding-left: 98px;
+       padding-right: 98px;
     }
   
     .m-col-span-1	{grid-column: span 1 / span 1;}
@@ -147,8 +147,8 @@ img, embed, object, video, picture {
        display: grid; 
        grid-template-columns: repeat(12, minmax(0, 1fr));
        grid-column-gap: 16px;
-       padding-left: 60px;
-       padding-right: 60px;
+       padding-left: 80px;
+       padding-right: 80px;
     }
  
     .l-col-span-1	{grid-column: span 1 / span 1;}

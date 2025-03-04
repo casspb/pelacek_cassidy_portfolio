@@ -175,7 +175,7 @@ foreach ($categories_details_results as $category_row) {
                     <img src="images/' . $row['mainImage'] . '" alt="Project Image" class="project-image">
                     <div class="content-overlay">
                         <h2>' . $row['name'] . '</h2>
-                        <p>Check out this project - ' . $row['year'] . '</p>
+                        <p>  Created in ' . $row['year'] . '</p>
                         <div class="sorting-buttons-variation">
                             <p>' . implode(', ', $category_names) . '</p>  
                         </div>
@@ -220,6 +220,7 @@ foreach ($categories_details_results as $category_row) {
             <?php
                 // Loop through testimonials
                 foreach ($testimonials_results as $row) {
+                    
                     echo '
                         <div class="testimonial">
                             <h3>' . $row['name'] . ', ' . $row['job'] . '</h3>
@@ -270,7 +271,7 @@ foreach ($categories_details_results as $category_row) {
         <div class="col-start-3 col-span-2 m-col-start-10 m-col-end-12">
         <input id="submit" type="submit" value="SEND">
         </div>
-        <div id="feedback" class="col-span-full m-col-start-2 m-col-end-7">*Please fill out all required sections</div>
+        <div id="feedback" class="col-span-full m-col-start-3 m-col-end-6"></div>
     </form>
 
 </section>

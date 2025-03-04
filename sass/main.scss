@@ -23,9 +23,10 @@ body{
 //about me section
 
 .about-me-section{
+    position: relative;
+    margin: auto;
     text-align: center;
-    margin: 2em 2em;
-
+    width: 75%;
 
     p{
         margin: 1em; 
@@ -36,7 +37,7 @@ body{
 
 .project-video-section {
     position: relative;
-    width: 80%;
+    width: 75%;
     margin: auto;
 
     video {
@@ -255,7 +256,7 @@ body{
 
 .project-card {
     position: relative; 
-    height: 545px; 
+    height: 445px; 
     max-width: 629px; 
     min-width: 350px;
     width: 90%; 
@@ -288,40 +289,37 @@ body{
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(255, 255, 255, 0.6);  
+        background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));  
         z-index: 2; 
     }
 
-    h2{
-        position: absolute; 
-        z-index: 3; 
-        left: 25%;
+    .content-overlay {
+        position: absolute;
+        left: 10%;  
+        bottom: 10%; 
+        width: 80%;  
+        z-index: 3;
     }
  
-    p, .sorting-buttons-variation {
-        position: absolute; 
-        z-index: 3; 
-        left: 30%;
+    h2, p, .sorting-buttons-variation {
+        position: relative;
+        z-index: 3;
+        left: 0;
     }
 
-    h2 {
+    p{
+        font-size: 16px;
+    }
+
+    h2{
         font-size: 32px;
-        bottom: 23%; 
-        transform: translateX(-50%); 
-    }
-
-    p {
-        font-size: 14px;
-        bottom: 15%; 
-        transform: translateX(-40%); 
     }
 
     .sorting-buttons-variation {
-        bottom: 5%; 
-        margin-left: -30px; 
+        margin-top: 10px;
 
         p {
-            padding: 5px 50px; 
+            padding: 10px 20px; 
             border-radius: 20px;
             background-color: a.$primary-color;
             color: a.$base-colour;
@@ -332,12 +330,12 @@ body{
     // Arrow positioning 
     .arrow {
         position: absolute; 
-        right: 5%;  
-        bottom: 5%;
+        right: 1%;  
+        bottom: 45%;
         transform: translateX(0);  
         width: 78px;
         height: 78px;
-        background-color: a.$secondary-color;
+        background-color: rgba(a.$secondary-color, 0.8);
         border-radius: 50%; 
         display: flex; 
         justify-content: center; 
@@ -372,6 +370,7 @@ body{
     padding: 20px;           
 }
 
+
 .testimonial {
     margin: 0.5em;
     display: flex;          
@@ -382,10 +381,12 @@ body{
         color: a.$secondary-color;
         margin-left: -4em;
         font-weight: bold;
+        font-size: 18px;
      
     }
 
     .text-container {
+        text-align: left;
         width: 320px;
         position: relative;
         margin: 20px;
@@ -409,8 +410,6 @@ body{
 
 
 
-
-
 @media (min-width: 768px) {
     .sorting-buttons-container  .sorting-buttons {
         width: 200px;
@@ -428,7 +427,7 @@ body{
     background-color: a.$primary-color;
     color: a.$base-colour;
     max-width: 100%;
-    margin: 8em 3em;
+    margin: 4em 3em;
     cursor: pointer;
 }
 
@@ -442,7 +441,7 @@ mask: linear-gradient(90deg, transparent,white 20%, white 80%, transparent);
 .testimonial-carousel{
     gap: 1rem;
     display: flex;
-    animation: scroll 40s linear infinite;
+    animation: scroll 60s linear infinite;
     width: fit-content;
      justify-content: center;
     align-items: center;
@@ -492,6 +491,20 @@ mask: linear-gradient(90deg, transparent,white 20%, white 80%, transparent);
     
 }
 
+@media (min-width: 768px){
+
+    .project-card{
+        height: 545px;
+        .sorting-buttons-variation{
+            p{
+                padding: 5px 20px;
+            }
+        }
+    }
+
+   
+}
+
 @media (min-width: 1200px) {
 
 
@@ -499,11 +512,5 @@ mask: linear-gradient(90deg, transparent,white 20%, white 80%, transparent);
         display: visible;
     }
 
-    .about-me-section{
-        margin: 2em 4em;
-    
-        p{
-            margin: 2em 10em 4em 10em; 
-        }
-    }
+
 }

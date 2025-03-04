@@ -126,12 +126,12 @@
 
 .toolkit-track {
     display: flex; 
-    gap: 30px; 
-    animation: scrollGallery 20s linear infinite; 
+    gap: 60px; 
+    animation: scrollGallery 40s linear infinite; 
 }
 
 .toolkit-item {
-    width: 120px; 
+    width: 150px; 
     height: auto; 
     flex-shrink: 0; 
 }
