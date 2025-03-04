@@ -6,7 +6,7 @@ $accent-color: #38aecc;
 $body-text-color: #1a090d;
 $base-colour: #fffaff; // Added a hash for color code
 $primary-font-family: "DM Mono", monospace;
-$secondary-font-family: "Inter", sans-serif;
+$secondary-font-family: "poppins";
 
 .secondary-background-fill{
     background-color: #38aecc;
@@ -18,8 +18,8 @@ $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1512px;
 
 // Font size defaults
-$font-size-h1: 48px;
-$font-size-h2: 32px;
+$font-size-h1: 46px;
+$font-size-h2: 28px;
 $font-size-h3: 16px;
 $font-size-p: 14px;
 
@@ -29,15 +29,15 @@ h1 {
     font-family: $primary-font-family;
 
     @media (min-width: $breakpoint-mobile) {
-        font-size: 48px; // Mobile size
+        font-size: 42px; // Mobile size
     }
 
     @media (min-width: $breakpoint-tablet) {
-        font-size: 68px;
+        font-size: 60px;
     }
 
     @media (min-width: $breakpoint-desktop) {
-        font-size: 110px;
+        font-size: 72px;
     }
 
 
@@ -50,16 +50,16 @@ h2 {
     font-family: $primary-font-family;
 
     @media (min-width: $breakpoint-mobile) {
-        font-size: 32px; // Mobile size
+        font-size: 28px; // Mobile size
     }
    
 
     @media (min-width: $breakpoint-tablet) {
-        font-size: 64px;
+        font-size: 56px;
     }
 
     @media (min-width: $breakpoint-desktop) {
-        font-size: 78px;
+        font-size: 58px;
     }
 
 }
@@ -78,7 +78,7 @@ h3 {
 p {
     font-weight: 400;
     font-size: $font-size-p; // Base size for mobile
-    font-family: $primary-font-family;
+    font-family: $secondary-font-family;
 
 
     @media (min-width: $breakpoint-mobile) {
@@ -88,11 +88,11 @@ p {
 
     @media (min-width: $breakpoint-tablet) {
         line-height: 32px;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     @media (min-width: $breakpoint-desktop) {
         line-height: 34px;
-        font-size: 24px;
+
     }
 }

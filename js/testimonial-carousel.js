@@ -43,4 +43,6 @@ function pauseAnimation(scrollerInner) {
 function resumeAnimation(scrollerInner) {
     scrollerInner.style.animationPlayState = 'running';
 }
+
+
 })();
