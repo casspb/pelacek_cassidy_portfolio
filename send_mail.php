@@ -51,6 +51,20 @@ if ($errcount > 0) {
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':message', $message, PDO::PARAM_STR);
         $stmt->execute();
+
+        $to = 'cassidypelacek@gmail.com';
+        $subject = 'New portfolio message request';
+        $headers = "From: no-reply@yourdomain.com\r\n";
+        $headers .= "Reply-To: $email\r\n";
+
+        $message = "A new message has arrived in your portfolio:\n\n";
+         $message .= "Name: " . $name . "\n";
+         $message .= "Phone: " . $phone . "\n";
+         $message .= "Email: " . $email . "\n";
+         $message .= "Message: " . $msg . "\n";
+
+         mail($to, $subject, $message, $headers);
+
         echo json_encode(array("message" => "Form submitted. Thank you for your interest!"));
     } catch (PDOException $e) {
         echo json_encode(["errors" => ["Database error: " . $e->getMessage()]]);

@@ -5,12 +5,9 @@
     margin-top: 100px ;
     margin-bottom: .5em;
 
-
-
-    .title-buttons{
-        margin: 0 1em;
+    .sorting-buttons-container {
+        margin-left: -.5em;
     }
-
 
     .title-star{
         height: 1em;
@@ -158,6 +155,8 @@
     flex-grow: 1; 
     width: auto; 
     max-height: 350px; 
+    // opacity: 0;
+    // transform: translateY(50px);
 }
 
 
